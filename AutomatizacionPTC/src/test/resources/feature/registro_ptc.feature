@@ -2,7 +2,7 @@
 # author: Andres Duarte
 
 Característica: Registro de usuario en la página de PTC
-  Como nuevo usuario de Facebook
+  Como nuevo usuario de PTC
   Quiero registrarme en el portal de PTC
   Para poder acceder al contenido y funcionalidades disponibles en mi rol.
 
