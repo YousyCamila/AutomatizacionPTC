@@ -8,6 +8,9 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 
+import static co.com.AutoPTC.userinterface.RegistroUsuarioPTC.OPCION_ROL;
+import static co.com.AutoPTC.userinterface.RegistroUsuarioPTC.SELECT_ROL;
+
 public class IniciarSesion implements Task {
 
     private final String correo;
@@ -27,11 +30,14 @@ public class IniciarSesion implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Click.on(InicioSesionPage.BOTON_INICIOSESION),
                 Enter.theValue(correo).into(InicioSesionPage.INPUT_USUARIO),
                 Enter.theValue(contraseña).into(InicioSesionPage.INPUT_CONTRASENA),
-                SelectFromOptions.byVisibleText(rol).from(InicioSesionPage.SELECT_ROL),
+                Click.on(InicioSesionPage.SELECT_ROL),
+                Click.on(InicioSesionPage.OPCION_ROL),
                 Click.on(InicioSesionPage.BOTON_INGRESAR)
         );
     }
+
 }
 
