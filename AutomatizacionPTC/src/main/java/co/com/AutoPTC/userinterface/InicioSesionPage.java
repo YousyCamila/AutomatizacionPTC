@@ -20,4 +20,7 @@ public class InicioSesionPage {
     }
     public static final Target BOTON_INGRESAR = Target.the("botón de ingresar")
             .located(By.xpath("//button[@type='submit']"));
+
+    public static final Target PANEL = Target.the("contenedor MuiBox")
+            .located(By.className("MuiBox-root"));
 }
