@@ -1,0 +1,20 @@
+
+# Ignorar archivos generados por Serenity y compilación
+/target/
+/**/target/
+/**/target/site/serenity/
+*.html
+*.json
+*.xml
+*.png
+*.properties
+*.txt
+
+# IntelliJ, Gradle y sistema
+.idea/
+*.iml
+.gradle/
+build/
+*.log
+.DS_Store
+Thumbs.db
