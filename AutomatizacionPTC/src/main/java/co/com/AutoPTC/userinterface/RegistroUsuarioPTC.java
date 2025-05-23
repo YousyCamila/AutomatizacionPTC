@@ -28,5 +28,23 @@ public class RegistroUsuarioPTC extends PageObject{
     public static Target BOTON_REGISTRARSE = Target.the("Botón para enviar el formulario de registro")
             .located(By.id("Registrarse"));
 
+    public static Target SELECT_TIPO_DOCUMENTO = Target.the("Selector para elegir el tipo de documento")
+            .located(By.xpath("//*[@id=\"mui-component-select-tipoDocumento\"]"));
+
+    public static Target INPUT_NUMERO_DOCUMENTO = Target.the("Campo para ingresar el número de documento")
+            .located(By.id("//*[@id=\":r1b:\"]"));
+
+    public static Target INPUT_NOMBRES = Target.the("Campo para ingresar los nombres")
+            .located(By.id("//*[@id=\":r1c:\"]"));
+
+    public static Target INPUT_APELLIDOS = Target.the("Campo para ingresar los apellidos")
+            .located(By.id("//*[@id=\":r1d:\"]"));
+
+    public static Target INPUT_FECHA_NACIMIENTO = Target.the("Campo para ingresar la fecha de nacimiento")
+            .located(By.id("fechaNacimiento"));
+
+    public static Target BOTON_GUARDAR = Target.the("Botón para guardar el segundo formulario")
+            .located(By.id("guardarRegistro"));
+
 }
 
