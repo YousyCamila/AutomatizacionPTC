@@ -21,40 +21,32 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class EditarClienteStepDefinitons {
 
-    @Before
-    public void setTheStage() {
-        OnStage.setTheStage(new OnlineCast());
-        theActorCalled("usuario");
-    }
-    @Dado("^que el usuario se encuentra en la sección de edición de un cliente en PTC$")
-    public void queElUsuarioSeEncuentraEnLaSecciónDeEdiciónDeUnClienteEnPTC(){
-    theActorCalled("Usuario").wasAbleTo(
-            AbrirPagina.lapagina()
-        );
-    }
+
 
     @Cuando("^actualice los datos del cliente con la siguiente información$")
-    public void actualiceLosDatosDelClienteConLaSiguienteInformación(DataTable dataTable) {
-        List<Map<String, String>> datos = dataTable.asMaps(String.class, String.class);
-
-        // Como solo hay un registro, se toma el primero
-        Map<String, String> fila = datos.get(0);
-
-        DatosEditarCliente datosEditarCliente = new DatosEditarCliente(
-                fila.get("tipo de documento"),
-                fila.get("número de documento"),
-                fila.get("nombres"),
-                fila.get("apellidos"),
-                fila.get("correo electrónico")
-        );
-
-        theActorInTheSpotlight().attemptsTo(
-                EditarCliente.conDatos(datosEditarCliente)
-        );
+    public void actualiceLosDatosDelClienteConLaSiguienteInformación(DataTable arg1) {
+        // Write code here that turns the phrase above into concrete actions
+        // For automatic transformation, change DataTable to one of
+        // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
+        // E,K,V must be a scalar (String, Integer, Date, enum etc).
+        // Field names for YourType must match the column names in
+        // your feature file (except for spaces and capitalization).
+        throw new PendingException();
     }
 
     @Entonces("^se debe verificar que los datos del cliente hayan sido actualizados correctamente y se reflejen en la lista de clientes$")
     public void seDebeVerificarQueLosDatosDelClienteHayanSidoActualizadosCorrectamenteYSeReflejenEnLaListaDeClientes() {
+        // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
+
+
+
 }
+
+
+
+
+
+
+
