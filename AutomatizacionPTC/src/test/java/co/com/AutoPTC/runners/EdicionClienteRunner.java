@@ -12,5 +12,5 @@ import org.junit.runner.RunWith;
         glue = {"co.com.AutoPTC.stepsdefinitions", "co.com.AutoPTC.utils.hooks"},
         snippets = SnippetType.CAMELCASE)
 
-public class EditarClienteRunner {
+public class EdicionClienteRunner {
 }
