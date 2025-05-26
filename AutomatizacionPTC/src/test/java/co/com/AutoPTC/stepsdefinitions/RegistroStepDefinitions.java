@@ -35,11 +35,11 @@ public class RegistroStepDefinitions {
         String confirmarContrasena = datos.get("confirmarContrasena");
         String rol = datos.get("rol");
         String codigoVerificacion = datos.get("codigoVerificacion");
-        String tipoDocumento = datos.get("tipoDocumento");
-        String numeroDocumento = datos.get("numeroDocumento");
-        String nombres = datos.get("nombres");
-        String apellidos = datos.get("apellidos");
-        String fechaNacimiento = datos.get("fechaNacimiento");
+        //String tipoDocumento = datos.get("tipoDocumento");
+        //String numeroDocumento = datos.get("numeroDocumento");
+        //String nombres = datos.get("nombres");
+        //String apellidos = datos.get("apellidos");
+        //String fechaNacimiento = datos.get("fechaNacimiento");
 
         DatosRegistro datosRegistro = new DatosRegistro(
                 nombreCompleto,
@@ -47,12 +47,12 @@ public class RegistroStepDefinitions {
                 contrasena,
                 confirmarContrasena,
                 rol,
-                codigoVerificacion,
-                tipoDocumento,
-                numeroDocumento,
-                nombres,
-                apellidos,
-                fechaNacimiento
+                codigoVerificacion
+                //tipoDocumento,
+                //numeroDocumento,
+                //nombres,
+                //apellidos,
+                //fechaNacimiento
         );
 
         theActorInTheSpotlight().attemptsTo(

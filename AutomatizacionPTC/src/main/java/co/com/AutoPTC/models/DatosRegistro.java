@@ -9,26 +9,25 @@ public class DatosRegistro {
     private String rol;
     private String codigoVerificacion;
 
-    private String tipoDocumento;
-    private String numeroDocumento;
-    private String nombres;
-    private String apellidos;
-    private String fechaNacimiento;
+    //private String tipoDocumento;
+    //private String numeroDocumento;
+    //private String nombres;
+    //private String apellidos;
+    //private String fechaNacimiento;
 
     public DatosRegistro(String nombreCompleto, String email, String contrasena, String confirmarContrasena,
-                         String rol, String codigoVerificacion, String tipoDocumento, String numeroDocumento,
-                         String nombres, String apellidos, String fechaNacimiento) {
+                         String rol, String codigoVerificacion) {
         this.nombreCompleto = nombreCompleto;
         this.email = email;
         this.contrasena = contrasena;
         this.confirmarContrasena = confirmarContrasena;
         this.rol = rol;
         this.codigoVerificacion = codigoVerificacion;
-        this.tipoDocumento = tipoDocumento;
-        this.numeroDocumento = numeroDocumento;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.fechaNacimiento = fechaNacimiento;
+        //this.tipoDocumento = tipoDocumento;
+        //this.numeroDocumento = numeroDocumento;
+        //this.nombres = nombres;
+        //this.apellidos = apellidos;
+        //this.fechaNacimiento = fechaNacimiento;
     }
 
     // Getters
@@ -56,23 +55,7 @@ public class DatosRegistro {
         return codigoVerificacion;
     }
 
-    public String getTipoDocumento() {
-        return tipoDocumento;
-    }
+    //public String getTipoDocumento() {return tipoDocumento;}
 
-    public String getNumeroDocumento() {
-        return numeroDocumento;
-    }
 
-    public String getNombres() {
-        return nombres;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
-    }
 }
