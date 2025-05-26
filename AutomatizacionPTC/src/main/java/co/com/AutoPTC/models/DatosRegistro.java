@@ -9,7 +9,6 @@ public class DatosRegistro {
     private String rol;
     private String codigoVerificacion;
 
-    // Campos del segundo formulario
     private String tipoDocumento;
     private String numeroDocumento;
     private String nombres;

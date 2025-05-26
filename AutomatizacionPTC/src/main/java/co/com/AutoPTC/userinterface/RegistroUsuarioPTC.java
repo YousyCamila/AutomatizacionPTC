@@ -5,6 +5,14 @@ import net.serenitybdd.screenplay.targets.Target;
 
 public class RegistroUsuarioPTC extends PageObject{
 
+
+    public static Target BTN_INICIOSE = Target.the("boton para iniciar sesion")
+            .located(By.xpath("//*[@id=\"root\"]/div/header/div/a[3]"));
+
+    public static Target BTN_REGISTRAR = Target.the("Boton para registarse")
+            .located(By.xpath("//*[@id=\"root\"]/div/div[2]/div/form/button[2]"));
+
+
     public static Target INPUT_NOMBRE_COMPLETO = Target.the("Campo para ingresar el nombre completo")
             .located(By.id("fullName-input"));
 
@@ -21,7 +29,9 @@ public class RegistroUsuarioPTC extends PageObject{
             .located(By.id("role-select"));
 
     public static Target OPCION_ROL = Target.the("Opción de rol {0}")
-            .locatedBy("//*[@id=\":r8:\"]/li[2]");
+            .locatedBy("//li[contains(text(),'{0}')]");
+
+
     public static Target INPUT_CODIGO_VERIFICACION = Target.the("Campo para ingresar el código de verificación")
             .located(By.id("CodigoVeri"));
 

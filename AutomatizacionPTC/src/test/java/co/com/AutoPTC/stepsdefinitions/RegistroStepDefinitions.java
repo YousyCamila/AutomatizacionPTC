@@ -1,7 +1,7 @@
 package co.com.AutoPTC.stepsdefinitions;
 
 import co.com.AutoPTC.models.DatosRegistro;
-import co.com.AutoPTC.tasks.AbrirRegistro;
+import co.com.AutoPTC.tasks.AbrirPagina;
 import co.com.AutoPTC.tasks.Registrarse;
 import cucumber.api.DataTable;
 import cucumber.api.java.es.Cuando;
@@ -10,8 +10,6 @@ import cucumber.api.java.es.Entonces;
 import net.serenitybdd.screenplay.Actor;
 
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -23,23 +21,25 @@ public class RegistroStepDefinitions {
     @Dado("^que el usuario se encuentra en la página de registro de PTC$")
     public void queElUsuarioSeEncuentraEnLaPáginaDeRegistroDePTC() {
         theActorCalled("Usuario").wasAbleTo(
-                AbrirRegistro.lapagina()
+                AbrirPagina.lapagina()
         );
     }
 
-
     @Cuando("^ingrese los datos requeridos para el registro$")
     public void ingreseLosDatosRequeridosParaElRegistro(DataTable dataTable) {
-        List<Map<String, String>> datos = dataTable.asMaps(String.class, String.class);
+        Map<String, String> datos = dataTable.asMap(String.class, String.class);
 
-        Map<String, String> fila = datos.get(0);
-
-        String nombreCompleto = fila.get("nombreCompleto");
-        String email = fila.get("email");
-        String contrasena = fila.get("contrasena");
-        String confirmarContrasena = fila.get("confirmarContrasena");
-        String rol = fila.get("rol");
-        String codigoVerificacion = fila.get("codigoVerificacion");
+        String nombreCompleto = datos.get("nombreCompleto");
+        String email = datos.get("correoElectrónico");
+        String contrasena = datos.get("contraseña");
+        String confirmarContrasena = datos.get("confirmarContrasena");
+        String rol = datos.get("rol");
+        String codigoVerificacion = datos.get("codigoVerificacion");
+        String tipoDocumento = datos.get("tipoDocumento");
+        String numeroDocumento = datos.get("numeroDocumento");
+        String nombres = datos.get("nombres");
+        String apellidos = datos.get("apellidos");
+        String fechaNacimiento = datos.get("fechaNacimiento");
 
         DatosRegistro datosRegistro = new DatosRegistro(
                 nombreCompleto,
@@ -47,8 +47,14 @@ public class RegistroStepDefinitions {
                 contrasena,
                 confirmarContrasena,
                 rol,
-                codigoVerificacion
+                codigoVerificacion,
+                tipoDocumento,
+                numeroDocumento,
+                nombres,
+                apellidos,
+                fechaNacimiento
         );
+
         theActorInTheSpotlight().attemptsTo(
                 Registrarse.conDatos(datosRegistro)
         );
