@@ -13,7 +13,10 @@ public class InicioFomulario extends PageObject {
 
     public static Target   INPUT_TEFONO      = Target.the("ingreso del telefono").located(By.xpath("//*[@id=\":r6:\"]"));
     public static Target     INPUT_DESCRIBIR    = Target.the("ingreso de la descripcion").located(By.xpath("//*[@id=\":r7:\"]"));
-    public static Target BTN_INICIOSESION = Target.the("Boton inicio sesion").located(By.xpath("//*[@id=\"root\"]/div/div/div[1]/form/button"));
+    public static Target BTN_ENVIAR = Target.the("Boton inicio sesion").located(By.xpath("//*[@id=\"root\"]/div/div/div[1]/form/button"));
+
+    public static Target MENSAJE_FORMULARIO = Target.the("Mensaje de contacto").located(By.xpath("//*[@id=\"swal2-title\"]"));
+
 }
 
 

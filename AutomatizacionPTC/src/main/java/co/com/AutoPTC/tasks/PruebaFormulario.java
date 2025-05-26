@@ -7,6 +7,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
+import static co.com.AutoPTC.tasks.Esperar.unosSegundos;
 import static co.com.AutoPTC.userinterface.InicioFomulario.*;
 
 
@@ -36,7 +37,8 @@ public class PruebaFormulario implements Task {
                 Enter.theValue(credencial.getTelefono()).into(INPUT_TEFONO),
                 Click.on(INPUT_DESCRIBIR),
                 Enter.theValue(credencial.getMensaje()).into(INPUT_DESCRIBIR),
-                Click.on(BTN_INICIOSESION)
+                Click.on(BTN_ENVIAR),
+                unosSegundos(04)
         );
     }
 }

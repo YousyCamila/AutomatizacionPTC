@@ -12,6 +12,5 @@ Característica: Envío de formulario de contacto en la página de PTC
     Dado que el usuario se encuentra en la página de contacto de PTC
     Cuando completa el formulario con la información requerida
       | nombre          | correo                  | telefono   | mensaje                          |
-      | Angela Bonilla  | ejemplo.as3@gmail.com   | 3152674332  | Caso de maltrato intrafamiliar   |
-    Y envía el formulario
+      | Angela Bonilla  | Ejemploas3@gmail.com   | 3152674332  | Caso de maltrato intrafamiliar   |
     Entonces se debe mostrar una confirmación de envío exitoso del mensaje
