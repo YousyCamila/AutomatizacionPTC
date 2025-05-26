@@ -1,6 +1,6 @@
 package co.com.AutoPTC.stepsdefinitions;
-
-
+import static org.hamcrest.Matchers.is;
+import co.com.AutoPTC.question.ValidacionLogin;
 import co.com.AutoPTC.tasks.AbrirPagina;
 import co.com.AutoPTC.tasks.IniciarSesion;
 import cucumber.api.DataTable;
@@ -12,6 +12,7 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import java.util.List;
 import java.util.Map;
 
+import static net.bytebuddy.matcher.ElementMatchers.is;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -33,8 +34,11 @@ public class AutentificacionStepDefinitions {
                 IniciarSesion.con(correo, contraseña, rol)
         );
     }
-
     @Entonces("^se debe verificar que el usuario haya sido autenticado correctamente y redirigido a su panel correspondiente$")
-    public void seDebeVerificarQueElUsuarioHayaSidoAutenticadoCorrectamenteYRedirigidoASuPanel() {
+    public void seDebeVerificarQueElUsuarioHayaSidoAutenticadoCorrectamenteYRedirigidoASuPanelCorrespondiente() {
+        boolean loginExitoso = ValidacionLogin.validacionLogin().answeredBy(theActorInTheSpotlight());
+        if (!loginExitoso) {
+            throw new AssertionError("La autenticación no fue exitosa o el panel correspondiente no es visible.");
+        }
     }
 }

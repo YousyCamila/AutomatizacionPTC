@@ -7,7 +7,6 @@ public class CredencialesFormulario {
     private String telefono;
     private String mensaje;
 
-    // Constructor vacío requerido por Cucumber
     public CredencialesFormulario() {}
 
     public CredencialesFormulario(String nombre, String correo, String telefono, String mensaje) {
@@ -17,7 +16,6 @@ public class CredencialesFormulario {
         this.mensaje = mensaje;
     }
 
-    // Getters y Setters
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
 
