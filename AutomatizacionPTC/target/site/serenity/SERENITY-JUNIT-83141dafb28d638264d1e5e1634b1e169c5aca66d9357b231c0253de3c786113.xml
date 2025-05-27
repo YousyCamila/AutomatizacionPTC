@@ -1,8 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Envío de formulario de contacto en la página de PTC" skipped="0" tests="1" time="22.05" timestamp="2025-05-26 03:23:39"><testcase name="Enviar exitosamente el formulario de contacto"><failure message="Expected validacion formulario&#13;&#10;Expected: is &lt;true&gt;&#13;&#10;     but: was &lt;false&gt;" type="java.lang.AssertionError">Expected validacion formulario&#13;
-Expected: is &lt;true&gt;&#13;
-     but: was &lt;false&gt;</failure><system-err>Expected validacion formulario&#13;
-Expected: is &lt;true&gt;&#13;
-     but: was &lt;false&gt;&#13;
-co.com.AutoPTC.stepsdefinitions.FormularioStepsDefinitions.seDebeMostrarUnaConfirmaciónDeEnvíoExitosoDelMensaje(FormularioStepsDefinitions.java:36)&#13;
-✽.se debe mostrar una confirmación de envío exitoso del mensaje(src/test/resources/feature/formulario_ptc.feature:16)&#13;
-</system-err></testcase></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Envío de formulario de contacto en la página de PTC" skipped="0" tests="1" time="15.93" timestamp="2025-05-27 10:19:12"><testcase name="Enviar exitosamente el formulario de contacto"/></testsuite>

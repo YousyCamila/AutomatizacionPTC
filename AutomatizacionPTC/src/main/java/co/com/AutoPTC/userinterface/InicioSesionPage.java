@@ -10,7 +10,8 @@ public class InicioSesionPage {
     public static final Target INPUT_USUARIO = Target.the("campo de usuario")
             .located(By.id("corr-select"));
     public static final Target INPUT_CONTRASENA = Target.the("campo de contraseña")
-            .located(By.xpath("//*[@id=\":r3:\"]"));
+            .located(By.id("cont-select"));
+
     public static final Target DROPDOWN_ROL = Target.the("campo selector de rol")
             .located(By.xpath("//div[@role='combobox' and contains(@class, 'MuiSelect-select')]"));
     public static Target OPCION_ROL(String rol) {
