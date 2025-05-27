@@ -8,7 +8,6 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
 import static co.com.AutoPTC.userinterface.CrearCliente.*;
-import static co.com.AutoPTC.userinterface.EdicionCliente.INPUT_NUMERO_DOCUMENTO;
 
 public class CrearCliente implements Task {
 

@@ -15,6 +15,6 @@ Característica: Creación de cliente en la página de PTC
   @crearCliente
   Escenario: Verificar la creación exitosa de un nuevo cliente
     Cuando ingrese los datos requeridos del cliente
-      | tipo de documento | número de documento | nombres     | apellidos     | correo electrónico   | fecha de nacimiento |
-      | Cédula            | 123456789           | Juan Andrés | Pérez Duarte  | juan.perez@gmail.com | 1990-05-15          |
+      | tipo de documento | número de documento | nombres     | apellidos    | correo electrónico    | fecha de nacimiento |
+      | Cedula            | 123456459           | Juan Andrés | Pérez Duarte | junid.perez@gmail.com | 15-05-1990          |
     Entonces se debe verificar que el cliente haya sido registrado correctamente y aparezca en la lista de clientes

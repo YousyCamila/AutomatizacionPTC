@@ -15,7 +15,8 @@ public class CrearCliente {
             .located(By.xpath("//*[@id=\"root\"]/div/div[2]/div[1]/div[1]/button"));
 
     public static final Target SELECT_TIPO_DOCUMENTO = Target.the("Selector del tipo de documento")
-            .located(By.id("mui-component-select-tipoDocumento"));
+            .located(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/form/div[1]/div[1]/div/div/div"));
+
 
     public static Target opcionTipoDocumento(String tipo) {
         return Target.the("Opción de tipo de documento: " + tipo)
@@ -23,19 +24,19 @@ public class CrearCliente {
     }
 
     public static final Target INPUT_NUMERO_DOCUMENTO = Target.the("Campo para el número de documento")
-            .located(By.name("numeroDocumento"));
+            .located(By.xpath("//*[@id=\":r7e:\"]"));
 
     public static final Target INPUT_NOMBRES = Target.the("Campo para los nombres del cliente")
-            .located(By.name("nombres"));
+            .located(By.xpath("//*[@id=\":r7f:\"]"));
 
     public static final Target INPUT_APELLIDOS = Target.the("Campo para los apellidos del cliente")
-            .located(By.name("apellidos"));
+            .located(By.xpath("//*[@id=\":r7g:\"]"));
 
     public static final Target INPUT_CORREO_ELECTRONICO = Target.the("Campo para el correo electrónico")
-            .located(By.name("correo"));
+            .located(By.xpath("//*[@id=\":r7h:\"]"));
 
     public static final Target INPUT_FECHA_NACIMIENTO = Target.the("Campo para la fecha de nacimiento")
-            .located(By.xpath("//*[@id=\":r7v:\"]"));
+            .located(By.xpath("//*[@id=\":r7i:\"]"));
 
     public static final Target BTN_GUARDAR_CLIENTE = Target.the("Botón para guardar el nuevo cliente")
             .located(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/form/div[2]/button[2]"));
