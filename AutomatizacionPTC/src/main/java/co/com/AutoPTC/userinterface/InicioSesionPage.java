@@ -4,12 +4,13 @@ import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
 public class InicioSesionPage {
+
     public static final Target LOGIN_PAGE = Target.the("enlace de login")
             .located(By.xpath("//a[contains(@href, 'login')]"));
     public static final Target INPUT_USUARIO = Target.the("campo de usuario")
-            .located(By.xpath("//*[@id=\":r2:\"]"));
+            .located(By.id("corr-select"));
     public static final Target INPUT_CONTRASENA = Target.the("campo de contraseña")
-            .located(By.xpath("//*[@id=\":r3:\"]"));
+            .located(By.id("cont-select"));
 
     public static final Target DROPDOWN_ROL = Target.the("campo selector de rol")
             .located(By.xpath("//div[@role='combobox' and contains(@class, 'MuiSelect-select')]"));
@@ -23,4 +24,7 @@ public class InicioSesionPage {
 
     public static final Target PANEL = Target.the("contenedor MuiBox")
             .located(By.className("MuiBox-root"));
+
 }
+
+

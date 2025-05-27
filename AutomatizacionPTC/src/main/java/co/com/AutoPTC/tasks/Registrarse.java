@@ -26,6 +26,9 @@ public class Registrarse implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
+                Click.on(BTN_INICIOSE),
+                Click.on(BTN_REGISTRAR),
+                Click.on(INPUT_NOMBRE_COMPLETO),
                 Enter.theValue(datosRegistro.getNombreCompleto()).into(INPUT_NOMBRE_COMPLETO),
                 Enter.theValue(datosRegistro.getEmail()).into(INPUT_EMAIL),
                 Enter.theValue(datosRegistro.getContrasena()).into(INPUT_CONTRASENA),
@@ -34,6 +37,12 @@ public class Registrarse implements Task {
                 Click.on(OPCION_ROL.of(datosRegistro.getRol())),
                 Enter.theValue(datosRegistro.getCodigoVerificacion()).into(INPUT_CODIGO_VERIFICACION),
                 Click.on(BOTON_REGISTRARSE)
+               // Enter.theValue(datosRegistro.getTipoDocumento()).into(SELECT_TIPO_DOCUMENTO),
+                //Enter.theValue(datosRegistro.getNumeroDocumento()).into(INPUT_NUMERO_DOCUMENTO),
+                //Enter.theValue(datosRegistro.getNombres()).into(INPUT_NOMBRES),
+                //Enter.theValue(datosRegistro.getApellidos()).into(INPUT_APELLIDOS),
+                //Enter.theValue(datosRegistro.getFechaNacimiento()).into(INPUT_FECHA_NACIMIENTO),
+                //Click.on(BOTON_GUARDAR)
         );
     }
 }
