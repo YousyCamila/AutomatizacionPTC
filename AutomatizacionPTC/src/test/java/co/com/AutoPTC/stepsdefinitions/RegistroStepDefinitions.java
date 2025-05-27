@@ -1,6 +1,8 @@
 package co.com.AutoPTC.stepsdefinitions;
 
 import co.com.AutoPTC.models.DatosRegistro;
+import co.com.AutoPTC.question.ValidacionFormulario;
+import co.com.AutoPTC.question.ValidacionRegistro;
 import co.com.AutoPTC.tasks.AbrirPagina;
 import co.com.AutoPTC.tasks.Registrarse;
 import cucumber.api.DataTable;
@@ -11,6 +13,8 @@ import net.serenitybdd.screenplay.Actor;
 
 
 import java.util.Map;
+
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -64,7 +68,7 @@ public class RegistroStepDefinitions {
 
     @Entonces("^se debe verificar que el usuario haya sido registrado correctamente y redirigido a la página de inicio de sesión$")
     public void seDebeVerificarQueElUsuarioHayaSidoRegistradoCorrectamenteYRedirigidoALaPáginaDeInicioDeSesión() {
-        System.out.println("✅ Registro exitoso validado.");
+        theActorInTheSpotlight().should(seeThat(ValidacionRegistro.validacionRegistro()));
 
     }
 
