@@ -1,8 +1,11 @@
 package co.com.AutoPTC.stepsdefinitions;
 
 import co.com.AutoPTC.models.DatosEditarCliente;
+import co.com.AutoPTC.question.ValidacionEdicionCliente;
+import co.com.AutoPTC.question.ValidacionRegistro;
 import co.com.AutoPTC.tasks.AbrirPagina;
 import co.com.AutoPTC.tasks.EditarCliente;
+import co.com.AutoPTC.userinterface.ValidarEditarCliente;
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;
 import cucumber.api.java.Before;
@@ -12,6 +15,7 @@ import cucumber.api.java.es.Entonces;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 
 import java.util.List;
@@ -23,23 +27,37 @@ public class EditarClienteStepDefinitons {
 
 
 
+
     @Cuando("^actualice los datos del cliente con la siguiente información$")
-    public void actualiceLosDatosDelClienteConLaSiguienteInformación(DataTable arg1) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
-        // E,K,V must be a scalar (String, Integer, Date, enum etc).
-        // Field names for YourType must match the column names in
-        // your feature file (except for spaces and capitalization).
-        throw new PendingException();
+    public void actualiceLosDatosDelClienteConLaSiguienteInformación(DataTable dataTable) {
+        List<Map<String, String>> listaDatos = dataTable.asMaps(String.class, String.class);
+        Map<String, String> datos = listaDatos.get(0);
+
+        String tipoDocumento = datos.get("tipo de documento");
+        String numeroDocumento = datos.get("número de documento");
+        String nombres = datos.get("nombres");
+        String apellidos = datos.get("apellidos");
+        String correoElectronico = datos.get("correo electrónico");
+
+        DatosEditarCliente datosEditarCliente = new DatosEditarCliente(
+                tipoDocumento,
+                numeroDocumento,
+                nombres,
+                apellidos,
+                correoElectronico
+        );
+
+        theActorInTheSpotlight().attemptsTo(
+                EditarCliente.conDatos(datosEditarCliente)
+        );
     }
+
+
 
     @Entonces("^se debe verificar que los datos del cliente hayan sido actualizados correctamente y se reflejen en la lista de clientes$")
     public void seDebeVerificarQueLosDatosDelClienteHayanSidoActualizadosCorrectamenteYSeReflejenEnLaListaDeClientes() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+       theActorInTheSpotlight().should(seeThat(ValidacionEdicionCliente.validacionEdicionCliente()));
     }
-
 
 
 }

@@ -11,8 +11,8 @@ Característica: Registro de usuario en el portal de PTC
   Escenario: Registro exitoso de un nuevo usuario
     Dado que el usuario se encuentra en la página de registro de PTC
     Cuando ingrese los datos requeridos para el registro
-      | nombreCompleto      | ahssha Rincon     |
-      | correoElectrónico   | sdhsj@hotmail.com |
+      | nombreCompleto      | Luisa Chima       |
+      | correoElectrónico   | Luisa@hotmail.com |
       | contraseña          | clave123          |
       | confirmarContrasena | clave123          |
       | rol                 | Administrador     |
