@@ -17,5 +17,5 @@ Característica: Edición de cliente en la página de PTC
   Escenario: Verificar la edición exitosa de los datos de un cliente
     Cuando actualice los datos del cliente con la siguiente información
       | tipo de documento | número de documento | nombres     | apellidos     | correo electrónico    |
-      | Cédula            | 123456789           | SOFÍA MARÍA | MUÑOZ SALAZAR | sofia.munoz@gmail.com |
+      | Pasaporte         | ABD456              | SOFÍA MARÍA | MUÑOZ SALAZAR | sofia.munoz@gmail.com |
     Entonces se debe verificar que los datos del cliente hayan sido actualizados correctamente y se reflejen en la lista de clientes

@@ -3,6 +3,7 @@ package co.com.AutoPTC.tasks;
 import co.com.AutoPTC.models.DatosEditarCliente;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.core.steps.Instrumented;
@@ -31,9 +32,14 @@ public class EditarCliente implements Task {
                 Click.on(SELECT_TIPO_DOCUMENTO),
                 Click.on(opcionTipoDocumento(datos.getTipoDocumento())),
 
+                Click.on(INPUT_NUMERO_DOCUMENTO),
+                Clear.field(INPUT_NUMERO_DOCUMENTO),
                 Enter.theValue(datos.getNumeroDocumento()).into(INPUT_NUMERO_DOCUMENTO),
+                Clear.field(INPUT_NOMBRES),
                 Enter.theValue(datos.getNombres()).into(INPUT_NOMBRES),
+                Clear.field(INPUT_APELLIDOS),
                 Enter.theValue(datos.getApellidos()).into(INPUT_APELLIDOS),
+                Clear.field(INPUT_CORREO_ELECTRONICO),
                 Enter.theValue(datos.getCorreoElectronico()).into(INPUT_CORREO_ELECTRONICO),
 
                 Click.on(BOTON_GUARDAR_CAMBIOS)

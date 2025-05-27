@@ -12,7 +12,8 @@ public class EdicionCliente {
             .located(By.xpath("/html/body/div[2]/div[3]/ul/li[1]/div"));
 
     public static Target BTN_EDITAR_CLIENTE = Target.the("Botón para editar cliente")
-            .located(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/table/tbody/tr[1]/td[5]/button[2]"));
+            .located(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/table/tbody/tr[2]/td[5]/button[2]"));
+
 
     public static Target SELECT_TIPO_DOCUMENTO = Target.the("Selector para editar el tipo de documento")
             .located(By.xpath("//*[@id=\"mui-component-select-tipoDocumento\"]"));
@@ -23,16 +24,16 @@ public class EdicionCliente {
     }
 
     public static Target INPUT_NUMERO_DOCUMENTO = Target.the("Campo para editar el número de documento")
-            .located(By.xpath("//*[@id=\":r7r:\"]"));
+            .located(By.name("numeroDocumento"));
 
     public static Target INPUT_NOMBRES = Target.the("Campo para editar los nombres")
-            .located(By.xpath("//*[@id=\":r7s:\"]"));
+            .located(By.name("nombres"));
 
     public static Target INPUT_APELLIDOS = Target.the("Campo para editar los apellidos")
-            .located(By.xpath("//*[@id=\":r7t:\"]"));
+            .located(By.name("apellidos"));
 
     public static Target INPUT_CORREO_ELECTRONICO = Target.the("Campo para editar el correo electrónico")
-            .located(By.xpath("//*[@id=\":r7u:\"]"));
+            .located(By.name("correo"));
 
     public static Target INPUT_FECHA_NACIMIENTO = Target.the("Campo para editar la fecha de nacimiento")
             .located(By.xpath("//*[@id=\":r7v:\"]"));
