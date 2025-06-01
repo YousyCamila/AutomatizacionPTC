@@ -1,7 +1,7 @@
-package co.com.AutoPTC.question;
+package co.com.AutoPTC.question.Principal.Registro;
 
 
-import co.com.AutoPTC.userinterface.ValidarRegistro;
+import co.com.AutoPTC.userinterface.Principal.Registro.ValidarRegistro;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.questions.Text;
 import static jxl.biff.FormatRecord.logger;

@@ -1,10 +1,9 @@
-package co.com.AutoPTC.stepsdefinitions;
+package co.com.AutoPTC.stepsdefinitions.Principal.Registro;
 
-import co.com.AutoPTC.models.DatosRegistro;
-import co.com.AutoPTC.question.ValidacionFormulario;
-import co.com.AutoPTC.question.ValidacionRegistro;
+import co.com.AutoPTC.models.Principal.Registro.DatosRegistro;
+import co.com.AutoPTC.question.Principal.Registro.ValidacionRegistro;
 import co.com.AutoPTC.tasks.AbrirPagina;
-import co.com.AutoPTC.tasks.Registrarse;
+import co.com.AutoPTC.tasks.Principal.Registro.Registrarse;
 import cucumber.api.DataTable;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;

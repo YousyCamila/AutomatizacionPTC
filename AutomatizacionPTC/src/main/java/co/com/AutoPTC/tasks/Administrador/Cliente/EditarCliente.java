@@ -1,6 +1,6 @@
-package co.com.AutoPTC.tasks;
+package co.com.AutoPTC.tasks.Administrador.Cliente;
 
-import co.com.AutoPTC.models.DatosEditarCliente;
+import co.com.AutoPTC.models.Administrador.Cliente.DatosEditarCliente;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Clear;
@@ -8,7 +8,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.core.steps.Instrumented;
 
-import static co.com.AutoPTC.userinterface.EdicionCliente.*;
+import static co.com.AutoPTC.userinterface.Administrador.Cliente.EdicionCliente.*;
 
 public class EditarCliente implements Task {
 

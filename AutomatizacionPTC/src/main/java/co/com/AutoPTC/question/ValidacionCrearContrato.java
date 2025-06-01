@@ -1,8 +1,6 @@
 package co.com.AutoPTC.question;
 
 import co.com.AutoPTC.userinterface.CrearContratoPage;
-import co.com.AutoPTC.userinterface.ValidarEditarCliente;
-import co.com.AutoPTC.userinterface.ValidarRegistro;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;

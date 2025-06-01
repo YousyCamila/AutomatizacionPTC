@@ -1,4 +1,4 @@
-package co.com.AutoPTC.userinterface;
+package co.com.AutoPTC.userinterface.Principal.Registro;
 
 
 import net.serenitybdd.screenplay.targets.Target;

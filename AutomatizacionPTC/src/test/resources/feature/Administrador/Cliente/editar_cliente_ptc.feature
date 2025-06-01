@@ -1,5 +1,5 @@
 # language: es
-# author: Andres Duarte
+# author: Camila Guerra
 
 Característica: Edición de cliente en la página de PTC
   Como usuario autenticado en el portal de PTC

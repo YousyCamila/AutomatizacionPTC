@@ -1,7 +1,6 @@
-package co.com.AutoPTC.question;
+package co.com.AutoPTC.question.Administrador.Cliente;
 
-import co.com.AutoPTC.userinterface.ValidarEditarCliente;
-import co.com.AutoPTC.userinterface.ValidarRegistro;
+import co.com.AutoPTC.userinterface.Administrador.Cliente.ValidarEditarCliente;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;

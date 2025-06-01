@@ -1,22 +1,13 @@
-package co.com.AutoPTC.stepsdefinitions;
+package co.com.AutoPTC.stepsdefinitions.Administrador.Cliente;
 
-import co.com.AutoPTC.models.DatosEditarCliente;
-import co.com.AutoPTC.question.ValidacionEdicionCliente;
-import co.com.AutoPTC.question.ValidacionRegistro;
-import co.com.AutoPTC.tasks.AbrirPagina;
-import co.com.AutoPTC.tasks.EditarCliente;
-import co.com.AutoPTC.userinterface.ValidarEditarCliente;
+import co.com.AutoPTC.models.Administrador.Cliente.DatosEditarCliente;
+import co.com.AutoPTC.question.Administrador.Cliente.ValidacionEdicionCliente;
+import co.com.AutoPTC.tasks.Administrador.Cliente.EditarCliente;
 import cucumber.api.DataTable;
-import cucumber.api.PendingException;
-import cucumber.api.java.Before;
 import cucumber.api.java.es.Cuando;
-import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
-import net.serenitybdd.screenplay.actors.OnStage;
-import net.serenitybdd.screenplay.actors.OnlineCast;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 
 import java.util.List;
 import java.util.Map;
