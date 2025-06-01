@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/feature/editar_cliente_ptc.feature",
+        features = "src/test/resources/feature/Administrador/Cliente/editar_cliente_ptc.feature",
         glue = {"co.com.AutoPTC.stepsdefinitions", "co.com.AutoPTC.utils.hooks"},
         snippets = SnippetType.CAMELCASE)
 
