@@ -3,6 +3,7 @@ package co.com.AutoPTC.stepsdefinitions.Administrador.Cliente;
 import co.com.AutoPTC.models.Administrador.Cliente.DatosEditarCliente;
 import co.com.AutoPTC.question.Administrador.Cliente.ValidacionEdicionCliente;
 import co.com.AutoPTC.tasks.Administrador.Cliente.EditarCliente;
+import co.com.AutoPTC.tasks.Administrador.Cliente.ValidarEdicionCliente;
 import co.com.AutoPTC.utils.hooks.GeneradorDatosDinamicos;
 import cucumber.api.DataTable;
 import cucumber.api.java.es.Cuando;
@@ -43,13 +44,16 @@ public class EditarClienteStepDefinitons {
         );
     }
 
-
-
-
-
     @Entonces("^se debe verificar que los datos del cliente hayan sido actualizados correctamente y se reflejen en la lista de clientes$")
     public void seDebeVerificarQueLosDatosDelClienteHayanSidoActualizadosCorrectamenteYSeReflejenEnLaListaDeClientes() {
-       theActorInTheSpotlight().should(seeThat(ValidacionEdicionCliente.validacionEdicionCliente()));
+        theActorInTheSpotlight().attemptsTo(
+                ValidarEdicionCliente.conExito()
+        );
+
+        theActorInTheSpotlight().should(
+                seeThat(ValidacionEdicionCliente.seMuestraElClienteEditado())
+                        .orComplainWith(AssertionError.class, "El cliente editado no se muestra correctamente en la lista")
+        );
     }
 
 

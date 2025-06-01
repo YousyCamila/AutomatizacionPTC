@@ -28,10 +28,8 @@ public class EditarCliente implements Task {
                 Click.on(ABRIR_OPCIONES),
                 Click.on(ABRIR_GESTIONCLIENTES),
                 Click.on(BTN_EDITAR_CLIENTE),
-
                 Click.on(SELECT_TIPO_DOCUMENTO),
                 Click.on(opcionTipoDocumento(datos.getTipoDocumento())),
-
                 Click.on(INPUT_NUMERO_DOCUMENTO),
                 Clear.field(INPUT_NUMERO_DOCUMENTO),
                 Enter.theValue(datos.getNumeroDocumento()).into(INPUT_NUMERO_DOCUMENTO),
@@ -44,5 +42,7 @@ public class EditarCliente implements Task {
 
                 Click.on(BOTON_GUARDAR_CAMBIOS)
         );
+
+        actor.remember("numeroDocumentoCliente", datos.getNumeroDocumento());
     }
 }
