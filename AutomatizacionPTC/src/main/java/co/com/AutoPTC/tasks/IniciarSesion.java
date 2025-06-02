@@ -5,12 +5,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.ClickOnBy;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.SelectFromOptions;
-
-import static co.com.AutoPTC.userinterface.RegistroUsuarioPTC.OPCION_ROL;
-import static co.com.AutoPTC.userinterface.RegistroUsuarioPTC.SELECT_ROL;
 
 public class IniciarSesion implements Task {
 

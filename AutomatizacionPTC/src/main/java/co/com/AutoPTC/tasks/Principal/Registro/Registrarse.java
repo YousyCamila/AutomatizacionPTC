@@ -1,14 +1,14 @@
-package co.com.AutoPTC.tasks;
+package co.com.AutoPTC.tasks.Principal.Registro;
 
-import co.com.AutoPTC.models.DatosRegistro;
+import co.com.AutoPTC.models.Principal.Registro.DatosRegistro;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.SelectFromOptions;
+import net.serenitybdd.screenplay.actions.Scroll;
 
-import static co.com.AutoPTC.userinterface.RegistroUsuarioPTC.*;
+import static co.com.AutoPTC.userinterface.Principal.Registro.RegistroUsuarioPTC.*;
 
 public class Registrarse implements Task {
 
@@ -33,6 +33,7 @@ public class Registrarse implements Task {
                 Enter.theValue(datosRegistro.getEmail()).into(INPUT_EMAIL),
                 Enter.theValue(datosRegistro.getContrasena()).into(INPUT_CONTRASENA),
                 Enter.theValue(datosRegistro.getConfirmarContrasena()).into(INPUT_CONFIRMAR_CONTRASENA),
+                Scroll.to(SELECT_ROL),
                 Click.on(SELECT_ROL),
                 Click.on(OPCION_ROL.of(datosRegistro.getRol())),
                 Enter.theValue(datosRegistro.getCodigoVerificacion()).into(INPUT_CODIGO_VERIFICACION),

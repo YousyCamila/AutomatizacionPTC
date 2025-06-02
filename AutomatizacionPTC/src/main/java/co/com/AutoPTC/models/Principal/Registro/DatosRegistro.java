@@ -1,4 +1,4 @@
-package co.com.AutoPTC.models;
+package co.com.AutoPTC.models.Principal.Registro;
 
 public class DatosRegistro {
 

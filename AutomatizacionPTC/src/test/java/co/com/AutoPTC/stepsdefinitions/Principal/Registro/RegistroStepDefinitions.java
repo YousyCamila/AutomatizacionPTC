@@ -1,10 +1,10 @@
-package co.com.AutoPTC.stepsdefinitions;
+package co.com.AutoPTC.stepsdefinitions.Principal.Registro;
 
-import co.com.AutoPTC.models.DatosRegistro;
-import co.com.AutoPTC.question.ValidacionFormulario;
-import co.com.AutoPTC.question.ValidacionRegistro;
+import co.com.AutoPTC.models.Principal.Registro.DatosRegistro;
+import co.com.AutoPTC.question.Principal.Registro.ValidacionRegistro;
 import co.com.AutoPTC.tasks.AbrirPagina;
-import co.com.AutoPTC.tasks.Registrarse;
+import co.com.AutoPTC.tasks.Principal.Registro.Registrarse;
+import co.com.AutoPTC.utils.hooks.GenerarDatosDinamicosRegistro;
 import cucumber.api.DataTable;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
@@ -32,18 +32,13 @@ public class RegistroStepDefinitions {
     @Cuando("^ingrese los datos requeridos para el registro$")
     public void ingreseLosDatosRequeridosParaElRegistro(DataTable dataTable) {
         Map<String, String> datos = dataTable.asMap(String.class, String.class);
-
-        String nombreCompleto = datos.get("nombreCompleto");
-        String email = datos.get("correoElectrónico");
-        String contrasena = datos.get("contraseña");
-        String confirmarContrasena = datos.get("confirmarContrasena");
-        String rol = datos.get("rol");
         String codigoVerificacion = datos.get("codigoVerificacion");
-        //String tipoDocumento = datos.get("tipoDocumento");
-        //String numeroDocumento = datos.get("numeroDocumento");
-        //String nombres = datos.get("nombres");
-        //String apellidos = datos.get("apellidos");
-        //String fechaNacimiento = datos.get("fechaNacimiento");
+        String nombreCompleto = GenerarDatosDinamicosRegistro.generarNombreCompleto();
+        String email = GenerarDatosDinamicosRegistro.generarCorreo();
+        String contrasena = GenerarDatosDinamicosRegistro.generarContraseña();
+        String confirmarContrasena = contrasena;
+        String rol = datos.get("rol");
+
 
         DatosRegistro datosRegistro = new DatosRegistro(
                 nombreCompleto,
@@ -52,11 +47,6 @@ public class RegistroStepDefinitions {
                 confirmarContrasena,
                 rol,
                 codigoVerificacion
-                //tipoDocumento,
-                //numeroDocumento,
-                //nombres,
-                //apellidos,
-                //fechaNacimiento
         );
 
         theActorInTheSpotlight().attemptsTo(
