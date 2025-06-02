@@ -6,9 +6,11 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.AutoPTC.tasks.Esperar.unosSegundos;
+import static co.com.AutoPTC.userinterface.CrearContratoPage.SELECT_DETECTIVE;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -30,13 +32,15 @@ public class CrearContrato implements Task {
                 Click.on(CrearContratoPage.BOTON_OPCIONES),
                 Click.on(CrearContratoPage.BOTON_CONTRATOS),
                 Click.on(CrearContratoPage.BOTON_CREAR),
-                unosSegundos(3),
+                unosSegundos(1),
 
                 Click.on(CrearContratoPage.SELECT_CLIENTE),
                 WaitUntil.the(CrearContratoPage.OPCION_CLIENTE(datos.getCliente()), isVisible()).forNoMoreThan(5).seconds(),
                 Click.on(CrearContratoPage.OPCION_CLIENTE(datos.getCliente())),
 
-                Click.on(CrearContratoPage.SELECT_DETECTIVE),
+                WaitUntil.the(SELECT_DETECTIVE, isVisible()).forNoMoreThan(5).seconds(),
+                Click.on(SELECT_DETECTIVE),
+
                 WaitUntil.the(CrearContratoPage.OPCION_DETECTIVE(datos.getDetective()), isVisible()).forNoMoreThan(5).seconds(),
                 Click.on(CrearContratoPage.OPCION_DETECTIVE(datos.getDetective())),
 
@@ -56,7 +60,12 @@ public class CrearContrato implements Task {
                 Enter.theValue(datos.getClausulasAdicionales()).into(CrearContratoPage.TEXTAREA_CLAUSULAS),
 
                 Click.on(CrearContratoPage.BOTON_CREAR_CONTRATO),
-                unosSegundos(05)
+                unosSegundos(01),
+                Click.on(CrearContratoPage.BOTON_CONFIRMACION_CONTRATO_CREADO),
+                unosSegundos(02),
+                Scroll.to(CrearContratoPage.ULTIMO_CONTRATO), // ejemplo de target abajo
+                unosSegundos(2)
+
         );
     }
 }
