@@ -15,5 +15,5 @@ Característica: Eliminación lógica de cliente en la página de PTC
 
   @eliminarCliente
   Escenario: Verificar la eliminación lógica (inactivación) de un cliente
-    Dado que el usuario está en la lista de clientes
     Cuando presione el botón "Eliminar" correspondiente a un cliente activo
+    Entonces el cliente debe aparecer con estado inactivo en la lista de clientes
