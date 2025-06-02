@@ -6,7 +6,6 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.SelectFromOptions;
 
 public class IniciarSesion implements Task {
 
@@ -27,9 +26,12 @@ public class IniciarSesion implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+
+                Click.on(InicioSesionPage.LOGIN_PAGE),
                 Enter.theValue(correo).into(InicioSesionPage.INPUT_USUARIO),
                 Enter.theValue(contraseña).into(InicioSesionPage.INPUT_CONTRASENA),
-                SelectFromOptions.byVisibleText(rol).from(InicioSesionPage.SELECT_ROL),
+                Click.on(InicioSesionPage.DROPDOWN_ROL),
+                Click.on(InicioSesionPage.OPCION_ROL(rol)),
                 Click.on(InicioSesionPage.BOTON_INGRESAR)
         );
     }

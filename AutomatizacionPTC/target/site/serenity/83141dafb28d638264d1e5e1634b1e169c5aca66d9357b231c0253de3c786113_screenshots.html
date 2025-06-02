@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">AutomatizacionFacebook</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="0e5ba5d4f46ba7ba42dd1126c2c4dd8814393141605bac773a66e106f68e254d.html">Env&iacute;o De Formulario De Contacto En La P&aacute;gina De PTC</a></span>
+                > <span class="truncate-60"><a
+                    href="83141dafb28d638264d1e5e1634b1e169c5aca66d9357b231c0253de3c786113.html">Enviar exitosamente el formulario de contacto </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 27-05-2025 16:00</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Envío De Formulario De Contacto En La Página De PTC</span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                Como visitante del sitio web de PTC
+Quiero llenar el formulario de &quot;Contáctanos&quot;
+Para que la empresa pueda recibir y gestionar mi solicitud o consulta.
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="864bbb6cd29a99d9f7ba1b63451210d34262bcf0cb9fad122d57d34beb0eb5d6.html">Formulario Contacto
+                                    (tag)</a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Enviar exitosamente el formulario de contacto
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="563b21a98600cd26608eca1c82091554a2d9810a211a39584aa2c8d3f8fb0c72.png" title=" Dado que el usuario se encuentra en la p&aacute;gina de contacto de PTC" width="1925"/>
+                <img src="563b21a98600cd26608eca1c82091554a2d9810a211a39584aa2c8d3f8fb0c72.png" title=" Usuario abrir pagina" width="1925"/>
+                <img src="563b21a98600cd26608eca1c82091554a2d9810a211a39584aa2c8d3f8fb0c72.png" title=" usuario opens the Inicio ptc" width="1925"/>
+                <img src="563b21a98600cd26608eca1c82091554a2d9810a211a39584aa2c8d3f8fb0c72.png" title=" Usuario abrir pagina (completed)" width="1925"/>
+                <img src="563b21a98600cd26608eca1c82091554a2d9810a211a39584aa2c8d3f8fb0c72.png" title=" Dado que el usuario se encuentra en la p&aacute;gina de contacto de PTC (completed)" width="1925"/>
+                <img src="b688cb7fcb61067841e995c295a6278c285eb45abfe83224e73d2d734200fe72.png" title=" Cuando completa el formulario con la informaci&oacute;n requerida
+| nombre | correo | telefono | mensaje |
+| Angela Bonilla | Ejemploas3@gmail.com | 3152674332 | Caso de maltrato intrafamiliar |" width="1925"/>
+                <img src="b688cb7fcb61067841e995c295a6278c285eb45abfe83224e73d2d734200fe72.png" title=" Usuario prueba formulario" width="1925"/>
+                <img src="b688cb7fcb61067841e995c295a6278c285eb45abfe83224e73d2d734200fe72.png" title=" usuario clicks on  Ingreso al formulario" width="1925"/>
+                <img src="0531bac1d7f3c65bd5940bf3348d0588cb4a2885225977a053911437a8e5676b.png" title=" usuario clicks on  Ingreso del Usuario" width="1925"/>
+                <img src="3f0e5b3f5f6fa62827f3d494dadd28d402d97a7689d9d53e72abe561b2204c1f.png" title=" usuario enters 'Angela Bonilla' into  Ingreso del Usuario" width="1925"/>
+                <img src="e3cbcd0fb39f30e21812c7a55927d4e01da3d7edf00937da8c30790cb829e0c9.png" title=" usuario clicks on Ingreso del password" width="1925"/>
+                <img src="ad00d73cd570fd3ab5bdc6918d80031ae67524c968015887bc973b30795abe83.png" title=" usuario enters 'Ejemploas3@gmail.com' into Ingreso del password" width="1925"/>
+                <img src="3c903df16750bff8c63979424021ea281f3b2fe27db08bf32b541fcbff7b8f13.png" title=" usuario clicks on ingreso del telefono" width="1925"/>
+                <img src="b305360e8ec9d119f1dbc482aebc09097520125a9f7260d373f053533b5c982c.png" title=" usuario enters '3152674332' into ingreso del telefono" width="1925"/>
+                <img src="1b895057b5f07fcd3bc4914dcccc6140a69ba45cca98b6cb031ff86934081c48.png" title=" usuario clicks on ingreso de la descripcion" width="1925"/>
+                <img src="d2ef5581491d0210b9ef515671b4473be5847ec1ae1d18957d2dc62ee2c357f5.png" title=" usuario enters 'Caso de maltrato intrafamiliar' into ingreso de la descripcion" width="1925"/>
+                <img src="7e90cdd662fc80035cd9fc3f486b369edb67e47add70f52623a63da27dd4013d.png" title=" usuario clicks on Boton inicio sesion" width="1925"/>
+                <img src="ca639b620bdbb1235f5aaa6eac095cace59bd89ca7c71c3f50ba23af98f4ff3c.png" title=" Usuario prueba formulario (completed)" width="1925"/>
+                <img src="ca639b620bdbb1235f5aaa6eac095cace59bd89ca7c71c3f50ba23af98f4ff3c.png" title=" Cuando completa el formulario con la informaci&oacute;n requerida
+| nombre | correo | telefono | mensaje |
+| Angela Bonilla | Ejemploas3@gmail.com | 3152674332 | Caso de maltrato intrafamiliar | (completed)" width="1925"/>
+                <img src="ca639b620bdbb1235f5aaa6eac095cace59bd89ca7c71c3f50ba23af98f4ff3c.png" title=" Entonces se debe mostrar una confirmaci&oacute;n de env&iacute;o exitoso del mensaje" width="1925"/>
+                <img src="ca639b620bdbb1235f5aaa6eac095cace59bd89ca7c71c3f50ba23af98f4ff3c.png" title=" Then validacion formulario" width="1925"/>
+                <img src="ca639b620bdbb1235f5aaa6eac095cace59bd89ca7c71c3f50ba23af98f4ff3c.png" title=" Entonces se debe mostrar una confirmaci&oacute;n de env&iacute;o exitoso del mensaje (completed): <span class='success-color'>SUCCESS</span>" width="1925"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.1</span>
+</div>
+</body>
+</html>
