@@ -64,6 +64,13 @@ public class CrearContratoPage {
                 .located(By.xpath("//ul[@role='listbox']//li[normalize-space(.)='" + tipo + "']"));
     }
 
-    public static Target MENSAJE_CONFIRMACION_CONTRATO_CREADO = Target.the ("Mensaje exitoso de edicion del cliente")
-            .located(By.xpath("/html/body/div[2]/div/div[2]"));
+
+    public static Target BOTON_CONFIRMACION_CONTRATO_CREADO = Target.the ("Mensaje exitoso de edicion del cliente")
+            .located(By.xpath("/html/body/div[2]/div/div[6]/button[1]"));
+
+
+    public static final Target ULTIMO_CONTRATO = Target.the("último contrato de la tabla")
+            .locatedBy("(//table//tbody//tr)[last()]");
+
+
 }
