@@ -23,7 +23,7 @@ public class GeneradorDatosDinamicosDetective {
     };
 
     private static final String[] ESPECIALIDADES = {
-            "cadenaCustodia", "investigacionExtorsion", "estudiosSeguridad", "investigacionInfidelidades", "investigacionRobosEmpresariales", "antecedentes", "recuperacionVehiculos"
+            "CadenaCustodia", "InvestigacionExtorsion", "EstudiosSeguridad", "InvestigacionInfidelidades", "InvestigacionRobosEmpresariales", "Antecedentes", "RecuperacionVehiculos"
     };
 
 

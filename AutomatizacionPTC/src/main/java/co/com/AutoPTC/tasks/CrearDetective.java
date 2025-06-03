@@ -28,9 +28,12 @@ public class CrearDetective implements Task {
                 Click.on(ABRIR_DROPDOWN_TIPO_DOCUMENTO ),
                 unosSegundos(2),
                 Click.on(OPCION_TIPO_DOCUMENTO(datos.getTipoDocumento())),
+                unosSegundos(2),
 
                 Enter.theValue(datos.getNumeroDocumento()).into(INPUT_NUMERO_DOCUMENTO),
+                unosSegundos(2),
                 Enter.theValue(datos.getNombres()).into(INPUT_NOMBRES),
+                unosSegundos(2),
                 Enter.theValue(datos.getApellidos()).into(INPUT_APELLIDOS),
                 Enter.theValue(datos.getCorreoElectronico()).into(INPUT_CORREO_ELECTRONICO),
                 Enter.theValue(datos.getFechaNacimiento()).into(INPUT_FECHA_NACIMIENTO)

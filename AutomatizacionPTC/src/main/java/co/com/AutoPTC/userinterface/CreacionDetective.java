@@ -37,9 +37,9 @@ public class CreacionDetective {
     public static final Target INPUT_FECHA_NACIMIENTO = Target.the("Campo fecha de nacimiento")
             .located(By.xpath("//label[normalize-space(text())='Fecha de Nacimiento']/following-sibling::div//input"));
 
-    public static Target checkboxEspecialidad(String especialidad) {
-        return Target.the("Checkbox de especialidad " + especialidad)
-                .located(By.xpath("//label[contains(@class, 'MuiFormControlLabel-root') and .//span[normalize-space(text())='" + especialidad + "']]"));
+    public static Target checkboxEspecialidad(String especialidades) {
+        return Target.the("Checkbox de especialidad " + especialidades)
+                .located(By.xpath("//label[contains(@class, 'MuiFormControlLabel-root') and .//span[normalize-space(text())='" + especialidades + "']]"));
     }
     public static final Target BOTON_GUARDAR_DETECTIVE = Target.the("Botón guardar detective")
             .located(By.xpath("//button[normalize-space(text())='Guardar' or contains(., 'Guardar')]"));
