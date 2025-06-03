@@ -16,7 +16,7 @@ import java.util.List;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-public class CrearContratoStepDefinitions {
+public class  CrearContratoStepDefinitions {
 
     @Cuando("^completa el formulario de contrato con la información requerida$")
     public void completaElFormularioDeContratoConLaInformacionRequerida(DataTable dataTable) {
