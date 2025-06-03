@@ -4,6 +4,7 @@ import co.com.AutoPTC.models.DatosCrearCliente;
 import co.com.AutoPTC.question.ValidacionCreacionCliente;
 import co.com.AutoPTC.question.ValidacionRegistro;
 import co.com.AutoPTC.tasks.CrearCliente;
+import co.com.AutoPTC.utils.hooks.GeneradorDatosDinamicosCliente;
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;
 import cucumber.api.java.es.Cuando;
@@ -18,16 +19,14 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CrearClienteStepDefinitions {
     @Cuando("^ingrese los datos requeridos del cliente$")
-    public void ingreseLosDatosRequeridosDelCliente(DataTable dataTable) {
-        List<Map<String, String>> listaDatos = dataTable.asMaps(String.class, String.class);
-        Map<String, String> datos = listaDatos.get(0);
+    public void ingreseLosDatosRequeridosDelDetectiveDeFormaAleatoria() {
 
-        String tipoDocumento = datos.get("tipo de documento");
-        String numeroDocumento = datos.get("número de documento");
-        String nombres = datos.get("nombres");
-        String apellidos = datos.get("apellidos");
-        String correoElectronico = datos.get("correo electrónico");
-        String fechaNacimiento = datos.get("fecha de nacimiento");
+        String tipoDocumento = GeneradorDatosDinamicosCliente.generarTipoDocumento();
+        String numeroDocumento = GeneradorDatosDinamicosCliente.generarDocumento(tipoDocumento);
+        String nombres = GeneradorDatosDinamicosCliente.generarNombre();
+        String apellidos = GeneradorDatosDinamicosCliente.generarApellido();
+        String correoElectronico = GeneradorDatosDinamicosCliente.generarCorreo();
+        String fechaNacimiento = GeneradorDatosDinamicosCliente.generarFechaNacimiento();
 
         DatosCrearCliente datosCrearCliente = new DatosCrearCliente(
                 tipoDocumento,
@@ -37,11 +36,8 @@ public class CrearClienteStepDefinitions {
                 correoElectronico,
                 fechaNacimiento
         );
-
-        theActorInTheSpotlight().attemptsTo(
-                CrearCliente.conDatos(datosCrearCliente)
-        );
-    }
+        theActorInTheSpotlight().remember("datosCliente", datosCrearCliente);
+        theActorInTheSpotlight().attemptsTo(CrearCliente.conDatos(datosCrearCliente));    }
 
     @Entonces("^se debe verificar que el cliente haya sido registrado correctamente y aparezca en la lista de clientes$")
     public void seDebeVerificarQueElClienteHayaSidoRegistradoCorrectamenteYAparezcaEnLaListaDeClientes() {
