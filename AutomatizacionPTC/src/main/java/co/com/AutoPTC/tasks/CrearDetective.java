@@ -6,10 +6,13 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.core.steps.Instrumented;
+import net.serenitybdd.screenplay.actions.Scroll;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.AutoPTC.tasks.Esperar.unosSegundos;
 import static co.com.AutoPTC.userinterface.CreacionDetective.*; // Asegúrate de tener este paquete y la clase UserInterface con los selectores
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class CrearDetective implements Task {
 
@@ -22,7 +25,7 @@ public class CrearDetective implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(ABRIR_DROPTWON_TIPO_DOCUMENTO),
+                Click.on(ABRIR_DROPDOWN_TIPO_DOCUMENTO ),
                 unosSegundos(2),
                 Click.on(OPCION_TIPO_DOCUMENTO(datos.getTipoDocumento())),
 
@@ -33,13 +36,19 @@ public class CrearDetective implements Task {
                 Enter.theValue(datos.getFechaNacimiento()).into(INPUT_FECHA_NACIMIENTO)
         );
 
-        for (String especialidad : datos.getEspecialidades()) {
-            actor.attemptsTo(
-                    Click.on(checkboxEspecialidad(especialidad))
-            );
+        if (datos.getEspecialidades() == null || datos.getEspecialidades().isEmpty()) {
+            throw new IllegalArgumentException("Debe seleccionar una especialidad antes de guardar.");
         }
+
         actor.attemptsTo(
-                Click.on(BOTON_GUARDAR_DETECTIVE)
+                WaitUntil.the(checkboxEspecialidad(datos.getEspecialidades()), isVisible()).forNoMoreThan(10).seconds(),
+                Scroll.to(checkboxEspecialidad(datos.getEspecialidades())),
+                Click.on(checkboxEspecialidad(datos.getEspecialidades()))
+        );
+
+        actor.attemptsTo(
+                Click.on(BOTON_GUARDAR_DETECTIVE),
+                unosSegundos(05)
         );
     }
 }

@@ -1,8 +1,10 @@
 package co.com.AutoPTC.stepsdefinitions;
 
+import co.com.AutoPTC.models.DatosCrearContrato;
 import co.com.AutoPTC.models.Detective;
 import co.com.AutoPTC.question.ValidacionCrearContrato;
 import co.com.AutoPTC.question.ValidacionCrearDetective;
+import co.com.AutoPTC.tasks.CrearContrato;
 import co.com.AutoPTC.tasks.CrearDetective;
 import co.com.AutoPTC.tasks.NavegarA;
 import cucumber.api.DataTable;
@@ -26,8 +28,7 @@ public class CrearDetectiveStepDefinitions
     }
 
     @Cuando("^ingrese los datos requeridos del detective$")
-    public void completaElFormularioDeDetectiveConLaInformacionRequerida(DataTable dataTable) {
-        List<Detective> datos = dataTable.asList(Detective.class);
+    public void completaElFormularioDeDetectiveConLaInformacionRequerida(DataTable dataTable) {List<Detective> datos = dataTable.asList(Detective.class);
         Detective detective = datos.get(0);
         theActorInTheSpotlight().attemptsTo(CrearDetective.con(detective));
     }

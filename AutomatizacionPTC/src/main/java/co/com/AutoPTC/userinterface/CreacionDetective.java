@@ -11,30 +11,39 @@ public class CreacionDetective {
             .located(By.xpath("/html/body/div[2]/div[3]/ul/li[2]/div/div[2]/span"));
     public static final Target ABRIR_CREACION_CLIENTES = Target.the("Selector para opcion para crear detective")
             .located(By.xpath("//*[@id=\"root\"]/div/div[2]/div[1]/div[1]/button[1]"));
-    public static final Target ABRIR_DROPTWON_TIPO_DOCUMENTO = Target.the("Droptown para tipo de documento")
-            .locatedBy(String.valueOf(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/form/div/div[1]/div/div/div")));
-    public static Target OPCION_TIPO_DOCUMENTO (String tipoDocumento) {
-        return Target.the("opción " + tipoDocumento)
-                .located(By.xpath("//li[@data-value='" + tipoDocumento + "']"));
-    }
-    public static final Target INPUT_NUMERO_DOCUMENTO = Target.the("Agregar numero de documento")
-            .locatedBy(String.valueOf(By.xpath("//*[@id=\":r96:\"]")));
-    public static final Target INPUT_NOMBRES = Target.the("Agregar nombres")
-            .locatedBy(String.valueOf(By.xpath("//*[@id=\":r97:\"]")));
-    public static final Target INPUT_APELLIDOS = Target.the("Agregar apellidos")
-            .locatedBy(String.valueOf(By.xpath("//*[@id=\":r98:\"]")));
-    public static final Target INPUT_CORREO_ELECTRONICO = Target.the("Agregar correo")
-            .locatedBy(String.valueOf(By.xpath("//*[@id=\":r99:\"]")));
-    public static final Target INPUT_FECHA_NACIMIENTO = Target.the("Agregar fecha de nacimiento")
-            .locatedBy(String.valueOf(By.xpath("//*[@id=\":r9a:\"]")));
-    public static Target checkboxEspecialidad(String especialidad) {
-        return Target.the("checkbox de especialidad " + especialidad).located(By.xpath(
-                "//label[./span[contains(@class, 'MuiTypography-root') and contains(text(), '" + especialidad + "')]]//input[@type='checkbox']"
-        ));
-    }
-    public static final Target BOTON_GUARDAR_DETECTIVE  = Target.the("Guardar y crear Detective")
-            .locatedBy(String.valueOf(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/form/div/div[8]/div/button[2]")));
+    public static final Target ABRIR_DROPDOWN_TIPO_DOCUMENTO = Target.the("Dropdown para tipo de documento")
+            .located(By.xpath("//label[contains(text(), 'Tipo de Documento')]/following-sibling::div"));
 
-    public static final Target MENSAJE_CONFIRMACION_EXITO = Target.the("Mensaje de exito")
-            .locatedBy(String.valueOf(By.xpath("//*[@id=\"swal2-html-container\"]")));
+    public static Target OPCION_TIPO_DOCUMENTO(String tipoDocumento) {
+        return Target.the("Opción " + tipoDocumento)
+                .located(By.xpath("//ul[@role='listbox']//li[normalize-space(.)='" + tipoDocumento + "']"));
+    }
+
+    public static final Target INPUT_NUMERO_DOCUMENTO =
+            Target.the("Campo número de documento")
+                    .located(By.xpath("//label[text()='Número de Documento']/following-sibling::div//input"));
+
+    // CAMBIOS CLAVE AQUÍ: Usando el texto de la etiqueta para los TextField
+    public static final Target INPUT_NOMBRES = Target.the("Campo nombres")
+            .located(By.xpath("//label[normalize-space(text())='Nombres']/following-sibling::div//input"));
+
+    public static final Target INPUT_APELLIDOS = Target.the("Campo apellidos")
+            .located(By.xpath("//label[normalize-space(text())='Apellidos']/following-sibling::div//input"));
+
+    public static final Target INPUT_CORREO_ELECTRONICO = Target.the("Campo correo electrónico")
+            .located(By.xpath("//label[normalize-space(text())='Correo Electrónico']/following-sibling::div//input"));
+
+    // Este ya estaba bien, ya que el input de fecha tiene un type="date"
+    public static final Target INPUT_FECHA_NACIMIENTO = Target.the("Campo fecha de nacimiento")
+            .located(By.xpath("//label[normalize-space(text())='Fecha de Nacimiento']/following-sibling::div//input"));
+
+    public static Target checkboxEspecialidad(String especialidad) {
+        return Target.the("Checkbox de especialidad " + especialidad)
+                .located(By.xpath("//label[contains(@class, 'MuiFormControlLabel-root') and .//span[normalize-space(text())='" + especialidad + "']]"));
+    }
+    public static final Target BOTON_GUARDAR_DETECTIVE = Target.the("Botón guardar detective")
+            .located(By.xpath("//button[normalize-space(text())='Guardar' or contains(., 'Guardar')]"));
+
+    public static final Target MENSAJE_CONFIRMACION_EXITO = Target.the("Mensaje de confirmación de éxito")
+            .located(By.id("swal2-html-container"));
 }
