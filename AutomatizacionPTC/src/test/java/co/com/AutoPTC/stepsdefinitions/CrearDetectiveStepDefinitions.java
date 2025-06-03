@@ -7,6 +7,8 @@ import co.com.AutoPTC.question.ValidacionCrearDetective;
 import co.com.AutoPTC.tasks.CrearContrato;
 import co.com.AutoPTC.tasks.CrearDetective;
 import co.com.AutoPTC.tasks.NavegarA;
+import co.com.AutoPTC.utils.hooks.GeneradorDatosDinamicos;
+import co.com.AutoPTC.utils.hooks.GeneradorDatosDinamicosDetective;
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;
 import cucumber.api.java.es.Cuando;
@@ -27,9 +29,27 @@ public class CrearDetectiveStepDefinitions
         );
     }
 
-    @Cuando("^ingrese los datos requeridos del detective$")
-    public void completaElFormularioDeDetectiveConLaInformacionRequerida(DataTable dataTable) {List<Detective> datos = dataTable.asList(Detective.class);
-        Detective detective = datos.get(0);
+    @Cuando("^ingrese los datos requeridos del detective de forma aleatoria$")
+    public void ingreseLosDatosRequeridosDelDetectiveDeFormaAleatoria() {
+
+        String tipoDocumento = GeneradorDatosDinamicosDetective.generarTipoDocumento();
+        String numeroDocumento = GeneradorDatosDinamicosDetective.generarDocumento(tipoDocumento);
+        String nombres = GeneradorDatosDinamicosDetective.generarNombre();
+        String apellidos = GeneradorDatosDinamicosDetective.generarApellido();
+        String correoElectronico = GeneradorDatosDinamicosDetective.generarCorreo();
+        String fechaNacimiento = GeneradorDatosDinamicosDetective.generarFechaNacimiento();
+        String especialidades = GeneradorDatosDinamicosDetective.generarEspecialidad();
+
+        Detective detective = new Detective(
+                tipoDocumento,
+                numeroDocumento,
+                nombres,
+                apellidos,
+                correoElectronico,
+                fechaNacimiento,
+                especialidades
+        );
+        theActorInTheSpotlight().remember("datosDetective", detective);
         theActorInTheSpotlight().attemptsTo(CrearDetective.con(detective));
     }
 
