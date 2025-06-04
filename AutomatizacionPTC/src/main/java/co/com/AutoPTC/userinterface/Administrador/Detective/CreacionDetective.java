@@ -46,4 +46,10 @@ public class CreacionDetective {
 
     public static final Target MENSAJE_CONFIRMACION_EXITO = Target.the("Mensaje de confirmación de éxito")
             .located(By.id("swal2-html-container"));
+
+    public static final Target FILA_POR_CEDULA = Target.the("Fila por cédula")
+            .locatedBy("//table[@id='tablaDetectives']//tbody/tr[td[contains(text(),'{0}')]]");
+
+    public static final Target FILA_POR_NOMBRE_APELLIDO = Target.the("Fila por nombre y apellido")
+            .locatedBy("//table[@id='tablaDetectives']//tbody/tr[td[contains(text(),'{0}')] and td[contains(text(),'{1}')]]");
 }
