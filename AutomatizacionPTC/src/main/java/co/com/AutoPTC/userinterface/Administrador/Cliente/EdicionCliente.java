@@ -23,6 +23,7 @@ public class EdicionCliente {
                 .located(By.xpath("//li[@role='option' and @data-value='" + tipo + "']"));
     }
 
+
     public static Target INPUT_NUMERO_DOCUMENTO = Target.the("Campo para editar el número de documento")
             .located(By.name("numeroDocumento"));
 
