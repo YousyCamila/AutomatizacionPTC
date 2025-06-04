@@ -14,3 +14,6 @@ Característica: Envío de formulario de contacto en la página de PTC
       | nombre          | correo                  | telefono   | mensaje                          |
       | Angela Bonilla  | Ejemploas3@gmail.com   | 3152674332  | Caso de maltrato intrafamiliar   |
     Entonces se debe mostrar una confirmación de envío exitoso del mensaje
+
+
+

@@ -16,7 +16,6 @@ public class ValidacionCrearContrato implements Question<Boolean> {
         try {
             String descripcionEsperada = GeneradorDatosCrearContrato.ultimaDescripcionGenerada;
 
-            // Buscar la descripción en el DOM
             Target descripcionEnTabla = Target.the("descripcion recién creada")
                     .locatedBy("//*[contains(text(),'" + descripcionEsperada + "')]");
 

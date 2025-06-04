@@ -1,5 +1,6 @@
 package co.com.AutoPTC.tasks;
 
+import co.com.AutoPTC.userinterface.CrearContratoPage;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -21,12 +22,22 @@ public class EliminarDetective implements Task {
                 unosSegundos(01),
                 Click.on(EliminacionDetective.ABRIR_GESTIONDETECTIVES),
                 unosSegundos(01),
+                Click.on(EliminacionDetective.ABRIR_BOTON_EDITAR),
+                unosSegundos(01),
+
+                Click.on(EliminacionDetective.ACTIVAR_DETECTIVE),
+                unosSegundos(01),
+                Click.on(EliminacionDetective.GUARDAR_CON_DETECTIVE_ACTIVO),
+                unosSegundos(01),
+                Click.on(EliminacionDetective.BOTON_CONFIRMAR_GUARDADO),
+                unosSegundos(01),
                 Click.on(EliminacionDetective.BTN_ELIMINAR),
                 unosSegundos(01),
                 Click.on(EliminacionDetective.BTN_ACEPTAR_ELIMINAR),
                 unosSegundos(01),
                 Click.on(EliminacionDetective.BTN_ACEPTAR),
-                unosSegundos(03)
+                unosSegundos(02)
+
         );
     }
 

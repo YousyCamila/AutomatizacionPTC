@@ -63,7 +63,7 @@ public class CrearContrato implements Task {
                 unosSegundos(01),
                 Click.on(CrearContratoPage.BOTON_CONFIRMACION_CONTRATO_CREADO),
                 unosSegundos(02),
-                Scroll.to(CrearContratoPage.ULTIMO_CONTRATO), // ejemplo de target abajo
+                Scroll.to(CrearContratoPage.ULTIMO_CONTRATO),
                 unosSegundos(2)
 
         );
