@@ -1,21 +1,13 @@
-package co.com.AutoPTC.stepsdefinitions;
+package co.com.AutoPTC.stepsdefinitions.Administrador.Detective;
 
-import co.com.AutoPTC.models.DatosCrearContrato;
-import co.com.AutoPTC.models.Detective;
-import co.com.AutoPTC.question.ValidacionCrearContrato;
-import co.com.AutoPTC.question.ValidacionCrearDetective;
-import co.com.AutoPTC.tasks.CrearContrato;
-import co.com.AutoPTC.tasks.CrearDetective;
-import co.com.AutoPTC.tasks.NavegarA;
-import co.com.AutoPTC.utils.hooks.GeneradorDatosDinamicos;
+import co.com.AutoPTC.models.Administrador.Detective.Detective;
+import co.com.AutoPTC.question.Administrador.Detective.ValidacionCrearDetective;
+import co.com.AutoPTC.tasks.Administrador.Detective.CrearDetective;
+import co.com.AutoPTC.tasks.Administrador.Detective.NavegarA;
 import co.com.AutoPTC.utils.hooks.GeneradorDatosDinamicosDetective;
-import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
-
-import java.util.List;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;

@@ -1,16 +1,15 @@
-package co.com.AutoPTC.tasks;
+package co.com.AutoPTC.tasks.Administrador.Detective;
 
-import co.com.AutoPTC.models.Detective;
+import co.com.AutoPTC.models.Administrador.Detective.Detective;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.AutoPTC.tasks.Esperar.unosSegundos;
-import static co.com.AutoPTC.userinterface.CreacionDetective.*; // Asegúrate de tener este paquete y la clase UserInterface con los selectores
+import static co.com.AutoPTC.userinterface.Administrador.Detective.CreacionDetective.*; // Asegúrate de tener este paquete y la clase UserInterface con los selectores
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -28,12 +27,8 @@ public class CrearDetective implements Task {
                 Click.on(ABRIR_DROPDOWN_TIPO_DOCUMENTO ),
                 unosSegundos(2),
                 Click.on(OPCION_TIPO_DOCUMENTO(datos.getTipoDocumento())),
-                unosSegundos(2),
-
                 Enter.theValue(datos.getNumeroDocumento()).into(INPUT_NUMERO_DOCUMENTO),
-                unosSegundos(2),
                 Enter.theValue(datos.getNombres()).into(INPUT_NOMBRES),
-                unosSegundos(2),
                 Enter.theValue(datos.getApellidos()).into(INPUT_APELLIDOS),
                 Enter.theValue(datos.getCorreoElectronico()).into(INPUT_CORREO_ELECTRONICO),
                 Enter.theValue(datos.getFechaNacimiento()).into(INPUT_FECHA_NACIMIENTO)

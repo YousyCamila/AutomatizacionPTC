@@ -1,9 +1,9 @@
-package co.com.AutoPTC.question;
+package co.com.AutoPTC.question.Administrador.Detective;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
-import static co.com.AutoPTC.userinterface.CreacionDetective.MENSAJE_CONFIRMACION_EXITO;
+import static co.com.AutoPTC.userinterface.Administrador.Detective.CreacionDetective.MENSAJE_CONFIRMACION_EXITO;
 
 public class ValidacionCrearDetective implements Question<Boolean> {
 
