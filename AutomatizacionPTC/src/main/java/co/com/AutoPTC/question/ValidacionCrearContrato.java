@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.targets.Target;
 
-public class ValidacionCrearContrato implements Question<Boolean> {
+public class  ValidacionCrearContrato implements Question<Boolean> {
 
     public static ValidacionCrearContrato validacionCrearContrato() {
         return new ValidacionCrearContrato();

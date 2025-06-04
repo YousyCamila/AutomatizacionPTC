@@ -8,6 +8,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.ClickOnBy;
+import net.serenitybdd.screenplay.questions.Text;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -37,6 +38,14 @@ public <T extends Actor> void performAs(T actor) {
             Click.on(CreacionCaso.opcionDetectivePorNombre(datos.getNombreDetective())),
             Click.on(CreacionCaso.BTN_GUARDAR)
     );
+
+    String idCaso = Text.of(CreacionCaso.LBL_ID_CASO).viewedBy(actor).asString();
+    actor.remember("idCasoNuevo", idCaso);
+
+
+    actor.remember("casoNuevo", datos.getNombreCaso());
+    actor.remember("clienteDelCaso", datos.getNombreCliente());
+    actor.remember("detectiveDelCaso", datos.getNombreDetective());
 }
 
 }

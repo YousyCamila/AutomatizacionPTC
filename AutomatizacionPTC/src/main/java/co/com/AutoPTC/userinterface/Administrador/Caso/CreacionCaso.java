@@ -42,4 +42,7 @@ public class CreacionCaso {
             .located(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/form/div/div[4]/div/button[2]"));
 
 
+    public static final Target LBL_ID_CASO = Target.the("ID del caso creado")
+            .locatedBy("//td[contains(@class,'MuiTableCell-root') and contains(@class,'MuiTableCell-body') and contains(@class,'MuiTableCell-sizeMedium')]");
+
 }

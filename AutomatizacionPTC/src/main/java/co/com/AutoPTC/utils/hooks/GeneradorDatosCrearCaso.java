@@ -9,14 +9,16 @@ import java.util.Random;
 public class GeneradorDatosCrearCaso {
 
     private static final List<String> TIPOS_CASO = Arrays.asList(
-            "Cadena de Custodia",
-            "Investigacion de Extorsión",
-            "Estudios de Seguridad",
-            "Investigación de Infidelidades",
-            "Investigación de Robos Empresariales",
+            "Cadena de custodia",
+            "Investigación de extorsión",
+            "Estudios de seguridad",
+            "Investigación de infidelidades",
+            "Investigación de robos empresariales",
             "Antecedentes",
-            "Recuperación de Vehículos"
+            "Recuperación de vehículos"
     );
+
+
 
     private static final List<String> CLIENTES = Arrays.asList(
             "Camila Rincon",
