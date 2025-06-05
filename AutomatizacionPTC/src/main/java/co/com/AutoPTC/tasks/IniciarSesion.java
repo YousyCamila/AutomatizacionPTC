@@ -19,6 +19,7 @@ public class IniciarSesion implements Task {
         this.rol = rol;
     }
 
+
     public static IniciarSesion con(String correo, String contraseña, String rol) {
         return Tasks.instrumented(IniciarSesion.class, correo, contraseña, rol);
     }

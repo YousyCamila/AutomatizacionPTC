@@ -17,8 +17,28 @@ public class InicioFomulario extends PageObject {
 
     public static Target MENSAJE_FORMULARIO = Target.the("Mensaje de contacto").located(By.xpath("//*[@id=\"swal2-title\"]"));
 
-}
+    public static Target BTON_DE_CONTINUAR = Target.the("boton continuar al inicio de sesion").located(By.xpath("/html/body/div[2]/div/div[6]/button[1]"));
 
+
+    public static Target INPUT_CORRREO = Target.the("input").located(By.xpath("/html/body/div/div/div[2]/div/form/div[1]/div/input"));
+    public static Target INPUT_CONTRASEÑA = Target.the("input").located(By.xpath("/html/body/div/div/div[2]/div/form/div[2]/div/input"));
+
+
+    public static Target INPUT_ROLES = Target.the("selector de rol").located(By.xpath("//div[@role='combobox']"));
+    public static Target opcionRol(String rol) {
+        return Target.the("opción de rol").located(By.xpath("//li[text()='" + rol + "']"));
+    }
+    public static Target BTN_INICIAR = Target.the("boton").located(By.xpath("/html/body/div/div/div[2]/div/form/button[1]"));
+
+
+    public static Target INPUT_INICIAR_SESION = Target.the("boton inicio sesion").located(By.xpath("/html/body/div/div/header/div/a[3]"));
+
+    public static Target BOTON_RESPONDER_SOLICITUDES = Target.the("boton responder solicitudes").located(By.xpath("/html/body/div/div/div[1]/div/div[2]/button"));
+
+    public static Target BOTON_ORDENAR = Target.the("boton ordenar").located(By.xpath("/html/body/div/div/div/div/table/thead/tr/th[6]/button"));
+    public static Target BOTON_ORDENAR_ULTIMO = Target.the("boton ordenar").located(By.xpath("/html/body/div/div/div/div/table/thead/tr/th[6]/button"));
+
+}
 
 
 
