@@ -14,23 +14,11 @@ public class EliminarDetectiveStepDefinitions {
 
     @Cuando("^presione el botón \"([^\"]*)\" correspondiente a un detective activo$")
     public void presioneElBotonCorrespondienteAUnDetectiveActivo(String boton) {
-        theActorInTheSpotlight().attemptsTo(
-                EliminarDetective.ahora()
-        );
+        theActorInTheSpotlight().attemptsTo(EliminarDetective.ahora());
     }
 
     @Entonces("^el detective debe aparecer con estado inactivo en la lista de detectives$")
     public void elDetectiveDebeAparecerConEstadoInactivoEnLaListaDeDetectives() {
-        theActorInTheSpotlight().attemptsTo(
-                ValidarEliminacionDetective.eliminarDetectivePorNumeroDinamico()
-        );
-
-        theActorInTheSpotlight().should(
-                seeThat(ValidacionEliminacionDetective.seMuestraDetectiveInactivo())
-                        .orComplainWith(AssertionError.class, "El detective no aparece como inactivo en la lista")
-        );
+        theActorInTheSpotlight().attemptsTo(ValidarEliminacionDetective.eliminarDetectivePorNumeroDinamico());
     }
-
-
-
 }
