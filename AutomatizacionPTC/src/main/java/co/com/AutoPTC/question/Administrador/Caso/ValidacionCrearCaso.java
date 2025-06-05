@@ -19,14 +19,19 @@ public class ValidacionCrearCaso implements Question<Boolean> {
         String detectiveEsperado = actor.recall("detectiveDelCaso");
 
         try {
-            String casoEnPantalla = Text.of(ValidacionCreacionCaso.CAMPO_VALIDAR_NOMBRE_CASO)
+            String casoEnPantalla = Text.of(ValidacionCreacionCaso.campoValidarNombreCaso(casoEsperado))
                     .viewedBy(actor).asString().trim();
 
-            String clienteEnPantalla = Text.of(ValidacionCreacionCaso.CAMPO_VALIDAR_CLIENTE)
+            String clienteEnPantalla = Text.of(ValidacionCreacionCaso.campoValidarCliente(casoEsperado))
                     .viewedBy(actor).asString().trim();
 
-            String detectiveEnPantalla = Text.of(ValidacionCreacionCaso.CAMPO_VALIDAR_DETECTIVE)
+            String detectiveEnPantalla = Text.of(ValidacionCreacionCaso.campoValidarDetective(casoEsperado))
                     .viewedBy(actor).asString().trim();
+
+
+            System.out.println("casoEsperado: " + casoEsperado + " | casoEnPantalla: " + casoEnPantalla);
+            System.out.println("clienteEsperado: " + clienteEsperado + " | clienteEnPantalla: " + clienteEnPantalla);
+            System.out.println("detectiveEsperado: " + detectiveEsperado + " | detectiveEnPantalla: " + detectiveEnPantalla);
 
             return casoEsperado.equalsIgnoreCase(casoEnPantalla)
                     && clienteEsperado.equalsIgnoreCase(clienteEnPantalla)

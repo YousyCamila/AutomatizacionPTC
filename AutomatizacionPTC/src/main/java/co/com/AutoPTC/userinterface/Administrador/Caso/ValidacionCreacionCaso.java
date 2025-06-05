@@ -14,14 +14,20 @@ public class ValidacionCreacionCaso {
     public static Target BTN_BUSCAR = Target.the("Boton para buscar el caso")
             .located(By.xpath("//*[@id=\"root\"]/div/div[2]/div[1]/div/button"));
 
-    public static final Target CAMPO_VALIDAR_NOMBRE_CASO = Target.the("Campo que muestra el nombre del caso")
-            .located(By.xpath("(//table//tr[td[contains(text(),'{0}')]]"));
+    public static Target campoValidarNombreCaso(String idCaso) {
+        return Target.the("Campo que muestra el nombre del caso con id " + idCaso)
+                .located(By.xpath("//table//tr[td[contains(text(),'" + idCaso + "')]]/td[2]"));
+    }
 
-    public static final Target CAMPO_VALIDAR_CLIENTE = Target.the("Campo que muestra el nombre del cliente")
-            .located(By.xpath("(//td[contains(@class,'MuiTableCell-root')])[2]"));
+    public static Target campoValidarCliente(String idCaso) {
+        return Target.the("Campo cliente del caso " + idCaso)
+                .located(By.xpath("//table//tr[td[contains(text(),'" + idCaso + "')]]/td[3]"));
+    }
 
-    public static final Target CAMPO_VALIDAR_DETECTIVE = Target.the("Campo que muestra el nombre del detective")
-            .located(By.xpath("(//td[contains(@class,'MuiTableCell-root')])[3]"));
+    public static Target campoValidarDetective(String idCaso) {
+        return Target.the("Campo detective del caso " + idCaso)
+                .located(By.xpath("//table//tr[td[contains(text(),'" + idCaso + "')]]/td[4]"));
+    }
 
 
 
