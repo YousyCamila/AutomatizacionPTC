@@ -2,6 +2,7 @@ package co.com.AutoPTC.models.Administrador.Caso;
 
 public class ModelCrearCaso {
 
+    private String idCaso;
     private String nombreCaso;
     private String nombreCliente;
     private String nombreDetective;
@@ -11,6 +12,7 @@ public class ModelCrearCaso {
         this.nombreCaso = nombreCaso;
         this.nombreCliente= nombreCliente;
         this.nombreDetective=nombreDetective;
+        this.idCaso = idCaso;
     }
 
     public String getNombreCaso()
@@ -26,4 +28,6 @@ public class ModelCrearCaso {
     {
         return nombreDetective;
     }
+
+    public String getId(){return idCaso;}
 }

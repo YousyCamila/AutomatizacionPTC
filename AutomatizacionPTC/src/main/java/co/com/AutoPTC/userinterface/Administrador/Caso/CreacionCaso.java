@@ -42,7 +42,14 @@ public class CreacionCaso {
             .located(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/form/div/div[4]/div/button[2]"));
 
 
-    public static final Target LBL_ID_CASO = Target.the("ID del último caso creado")
-            .locatedBy("(//tr[contains(@class, 'MuiTableRow-root')])[last()]/td[1]");
+    public static final Target LBL_ID_CASO = Target.the("ID del caso creado")
+            .locatedBy("//table//tr[last()]/td[1]");
+
+
+
 }
+//MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-160otpp-MuiTableCell-root
+
+//public static final Target LBL_ID_CASO = Target.the("ID del último caso creado")
+        //.locatedBy("(//table[contains(@class, 'MuiTable-root')]//td[contains(@class, 'MuiTableCell-body')])[last()]");
 

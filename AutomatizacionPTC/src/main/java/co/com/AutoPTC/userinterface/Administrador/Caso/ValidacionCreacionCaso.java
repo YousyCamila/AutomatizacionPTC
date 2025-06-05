@@ -23,6 +23,10 @@ public class ValidacionCreacionCaso {
     public static final Target CAMPO_VALIDAR_DETECTIVE = Target.the("Campo que muestra el nombre del detective")
             .located(By.xpath("(//td[contains(@class,'MuiTableCell-root')])[3]"));
 
+
+
+
+
 }
 
 
