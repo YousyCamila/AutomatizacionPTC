@@ -22,6 +22,7 @@ public class ValidarEdicionCliente implements Task {
 
         actor.attemptsTo(
                 Click.on(BTN_ACEPTAR),
+
                 Clear.field(BUSCAR_CLIENTE),
                 Enter.theValue(numeroDocumento).into(BUSCAR_CLIENTE),
                 Click.on(BTN_BUSCAR_CLIENTE)
