@@ -1,10 +1,10 @@
-package co.com.AutoPTC.question;
+package co.com.AutoPTC.question.Principal.Login;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Visibility; // Para verificar la visibilidad
 
-import static co.com.AutoPTC.userinterface.InicioSesionPage.PANEL;
+import static co.com.AutoPTC.userinterface.Principal.Login.InicioSesionPage.PANEL;
 import java.util.logging.Logger; // Importación correcta para Logger
 
 public class ValidacionLogin implements Question<Boolean> {

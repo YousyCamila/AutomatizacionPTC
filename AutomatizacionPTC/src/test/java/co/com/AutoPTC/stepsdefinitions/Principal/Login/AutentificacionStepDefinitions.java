@@ -1,13 +1,12 @@
-package co.com.AutoPTC.stepsdefinitions;
+package co.com.AutoPTC.stepsdefinitions.Principal.Login;
 import static org.hamcrest.Matchers.is;
-import co.com.AutoPTC.question.ValidacionLogin;
+import co.com.AutoPTC.question.Principal.Login.ValidacionLogin;
 import co.com.AutoPTC.tasks.AbrirPagina;
-import co.com.AutoPTC.tasks.IniciarSesion;
+import co.com.AutoPTC.tasks.Principal.Login.IniciarSesion;
 import cucumber.api.DataTable;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
-import net.serenitybdd.screenplay.actors.OnStage;
 
 import java.util.List;
 import java.util.Map;

@@ -1,6 +1,6 @@
-package co.com.AutoPTC.tasks;
+package co.com.AutoPTC.tasks.Principal.Login;
 
-import co.com.AutoPTC.userinterface.InicioSesionPage;
+import co.com.AutoPTC.userinterface.Principal.Login.InicioSesionPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -18,6 +18,7 @@ public class IniciarSesion implements Task {
         this.contraseña = contraseña;
         this.rol = rol;
     }
+
 
     public static IniciarSesion con(String correo, String contraseña, String rol) {
         return Tasks.instrumented(IniciarSesion.class, correo, contraseña, rol);

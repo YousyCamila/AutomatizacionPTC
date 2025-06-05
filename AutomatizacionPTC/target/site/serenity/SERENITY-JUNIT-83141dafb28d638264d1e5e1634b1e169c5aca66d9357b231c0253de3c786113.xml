@@ -1,1 +1,5 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Envío de formulario de contacto en la página de PTC" skipped="0" tests="1" time="29.13" timestamp="2025-06-04 08:11:20"><testcase name="Enviar exitosamente el formulario de contacto"/></testsuite>
+=======
 <?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Envío de formulario de contacto en la página de PTC" skipped="0" tests="1" time="24.74" timestamp="2025-06-03 08:48:05"><testcase name="Enviar exitosamente el formulario de contacto"/></testsuite>
+>>>>>>> f3951dc (feat: Actualizar flujo de creación y eliminación de contratos y detectives)
