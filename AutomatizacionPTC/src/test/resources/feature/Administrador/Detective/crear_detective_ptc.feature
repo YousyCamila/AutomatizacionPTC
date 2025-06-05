@@ -15,7 +15,5 @@ Característica: Creación de detective en la página de PTC
   @crearDetective
   Escenario: Verificar la creación exitosa de un nuevo detective
     Dado que el usuario se encuentra en el formulario de creación de detective en PTC
-    Cuando ingrese los datos requeridos del detective
-      | tipoDocumento      | numeroDocumento     | nombres          | apellidos       | correoElectronico       | fechaNacimiento   |  especialidades           |
-      | Cédula             | 100252468           | Ejemplo1         |  Perez sierra  | juannnn.2ronez@gmail.com   | 1990-08-1         | InvestigacionInfidelidades|
+    Cuando ingrese los datos requeridos del detective de forma aleatoria
     Entonces se debe verificar que el cliente haya sido registrado correctamente y aparezca en la lista de detectives

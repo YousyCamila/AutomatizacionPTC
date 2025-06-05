@@ -1,4 +1,4 @@
-package co.com.AutoPTC.models;
+package co.com.AutoPTC.models.Administrador.Detective;
 
 import java.util.List;
 

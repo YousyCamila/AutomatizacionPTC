@@ -1,6 +1,6 @@
-package co.com.AutoPTC.tasks;
+package co.com.AutoPTC.tasks.Principal.Login;
 
-import co.com.AutoPTC.userinterface.InicioSesionPage;
+import co.com.AutoPTC.userinterface.Principal.Login.InicioSesionPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;

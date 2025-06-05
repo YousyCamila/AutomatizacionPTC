@@ -1,4 +1,4 @@
-package co.com.AutoPTC.userinterface;
+package co.com.AutoPTC.userinterface.Principal.Login;
 
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
