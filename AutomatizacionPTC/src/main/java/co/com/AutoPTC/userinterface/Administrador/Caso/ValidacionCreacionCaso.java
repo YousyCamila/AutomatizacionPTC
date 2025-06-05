@@ -14,7 +14,14 @@ public class ValidacionCreacionCaso {
     public static Target BTN_BUSCAR = Target.the("Boton para buscar el caso")
             .located(By.xpath("//*[@id=\"root\"]/div/div[2]/div[1]/div/button"));
 
+    public static final Target CAMPO_VALIDAR_NOMBRE_CASO = Target.the("Campo que muestra el nombre del caso")
+            .located(By.xpath("(//table//tr[td[contains(text(),'{0}')]]"));
 
+    public static final Target CAMPO_VALIDAR_CLIENTE = Target.the("Campo que muestra el nombre del cliente")
+            .located(By.xpath("(//td[contains(@class,'MuiTableCell-root')])[2]"));
+
+    public static final Target CAMPO_VALIDAR_DETECTIVE = Target.the("Campo que muestra el nombre del detective")
+            .located(By.xpath("(//td[contains(@class,'MuiTableCell-root')])[3]"));
 
 }
 
