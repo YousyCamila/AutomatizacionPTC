@@ -2,6 +2,7 @@ package co.com.AutoPTC.tasks.Administrador.Caso;
 
 import co.com.AutoPTC.models.Administrador.Caso.ModelCrearCaso;
 import co.com.AutoPTC.models.Administrador.Cliente.DatosEditarCliente;
+import co.com.AutoPTC.tasks.Principal.ValidarYConfirmarAlerta;
 import co.com.AutoPTC.userinterface.Administrador.Caso.CreacionCaso;
 import co.com.AutoPTC.userinterface.Administrador.Caso.ValidacionCreacionCaso;
 import jdk.internal.org.jline.utils.ShutdownHooks;
@@ -40,18 +41,16 @@ public static CrearCaso con(ModelCrearCaso datos){
                 Click.on(CreacionCaso.SELECT_DETECTIVE),
                 Click.on(CreacionCaso.opcionDetectivePorNombre(datos.getNombreDetective())),
                 Click.on(CreacionCaso.BTN_GUARDAR),
-                Click.on(ValidacionCreacionCaso.BTN_ACEPTAR)
+                ValidarYConfirmarAlerta.conMensaje("Creado!")
+                //Click.on(ValidacionCreacionCaso.BTN_ACEPTAR)
         );
 
-        // Espera explícita para el ID que aparece solo luego de guardar
         actor.attemptsTo(
                 WaitUntil.the(CreacionCaso.LBL_ID_CASO, isVisible()).forNoMoreThan(15).seconds()
         );
 
-        // Captura el ID ya visible y con texto
         String idCaso = Text.of(CreacionCaso.LBL_ID_CASO).viewedBy(actor).asString().trim();
 
-        // Verificación simple para evitar ID vacío
         if(idCaso.isEmpty()){
             throw new AssertionError("No se pudo capturar el ID del caso creado.");
         }
