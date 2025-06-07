@@ -11,6 +11,7 @@ public class EliminacionCliente {
     public static Target BTN_ACEPTAR_ELIMINAR = Target.the("Boton para eliminar el cliente")
             .located(By.xpath("/html/body/div[2]/div/div[6]/button[1]"));
 
+
     public static Target BTN_ACEPTAR= Target.the("Boton para eliminar el cliente")
             .located(By.xpath("/html/body/div[2]/div/div[6]/button[1]"));
 

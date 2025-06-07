@@ -24,8 +24,8 @@ public class EliminarCliente implements Task {
                 Click.on(ABRIR_GESTIONCLIENTES),
                 Click.on(botonEliminarClienteActivo()),
                 //Click.on(BTN_ELIMINAR),
-                Click.on(BTN_ACEPTAR_ELIMINAR),
-                Click.on(BTN_ACEPTAR)
+                Click.on(BTN_ACEPTAR_ELIMINAR)
+                //Click.on(BTN_ACEPTAR)
         );
 
         String numeroDocumento = numeroDocumentoClienteActivo().resolveFor(actor).getText();
