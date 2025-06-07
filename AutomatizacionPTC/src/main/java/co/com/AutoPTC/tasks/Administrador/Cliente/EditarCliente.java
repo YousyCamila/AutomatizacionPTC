@@ -39,7 +39,6 @@ public class EditarCliente implements Task {
                 Enter.theValue(datos.getApellidos()).into(INPUT_APELLIDOS),
                 Clear.field(INPUT_CORREO_ELECTRONICO),
                 Enter.theValue(datos.getCorreoElectronico()).into(INPUT_CORREO_ELECTRONICO),
-
                 Click.on(BOTON_GUARDAR_CAMBIOS)
         );
 
