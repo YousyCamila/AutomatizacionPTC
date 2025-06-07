@@ -19,4 +19,18 @@ public class ValidarEditarCliente {
     public static Target CAMPO_VALIDAR = Target.the ("Validacion exitosa")
             .located(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/table/tbody/tr/td[1]"));
 
+    public static Target campoValidarDocumento(String numeroDocumento) {
+        return Target.the("Campo documento del cliente " + numeroDocumento)
+                .located(By.xpath("//table//tr[td[contains(text(),'" + numeroDocumento + "')]]/td[1]"));
+    }
+
+    public static Target campoValidarNombre(String numeroDocumento) {
+        return Target.the("Campo nombre del cliente con documento " + numeroDocumento)
+                .located(By.xpath("//table//tr[td[contains(text(),'" + numeroDocumento + "')]]/td[2]"));
+    }
+
+    public static Target campoValidarCorreo(String numeroDocumento) {
+        return Target.the("Campo correo del cliente con documento " + numeroDocumento)
+                .located(By.xpath("//table//tr[td[contains(text(),'" + numeroDocumento + "')]]/td[3]"));
+    }
 }

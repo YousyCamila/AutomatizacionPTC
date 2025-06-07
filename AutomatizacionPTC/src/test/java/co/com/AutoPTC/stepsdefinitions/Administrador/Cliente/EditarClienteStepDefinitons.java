@@ -4,6 +4,7 @@ import co.com.AutoPTC.models.Administrador.Cliente.DatosEditarCliente;
 import co.com.AutoPTC.question.Administrador.Cliente.ValidacionEdicionCliente;
 import co.com.AutoPTC.tasks.Administrador.Cliente.EditarCliente;
 import co.com.AutoPTC.tasks.Administrador.Cliente.ValidarEdicionCliente;
+import co.com.AutoPTC.tasks.Principal.ValidarYConfirmarAlerta;
 import co.com.AutoPTC.utils.hooks.GeneradorDatosDinamicos;
 import cucumber.api.DataTable;
 import cucumber.api.java.es.Cuando;
@@ -40,7 +41,8 @@ public class EditarClienteStepDefinitons {
 
         theActorInTheSpotlight().remember("datosEditados", datosEditarCliente);
         theActorInTheSpotlight().attemptsTo(
-                EditarCliente.conDatos(datosEditarCliente)
+                EditarCliente.conDatos(datosEditarCliente),
+                ValidarYConfirmarAlerta.conMensaje("Actualización exitosa")
         );
     }
 

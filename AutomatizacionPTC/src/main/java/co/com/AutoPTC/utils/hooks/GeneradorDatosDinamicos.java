@@ -12,14 +12,16 @@ public class GeneradorDatosDinamicos {
     };
 
     private static final String[] NOMBRES = {
-            "Carlos", "María", "Luis", "Ana", "Pedro", "Laura", "José", "Camila",
-            "Juan", "Diana", "Andrés", "Paula", "Miguel", "Valentina", "Daniel", "Sara"
+            "CARLOS", "MARÍA", "LUIS", "ANA", "PEDRO", "LAURA", "JOSÉ", "CAMILA",
+            "JUAN", "DIANA", "ANDRÉS", "PAULA", "MIGUEL", "VALENTINA", "DANIEL", "SARA"
     };
 
+
     private static final String[] APELLIDOS = {
-            "Gómez", "Rodríguez", "Martínez", "López", "Hernández", "Díaz", "Torres",
-            "Ramírez", "Moreno", "Rojas", "Gutiérrez", "Castro", "Ortiz", "Vargas"
+            "GÓMEZ", "RODRÍGUEZ", "MARTÍNEZ", "LÓPEZ", "HERNÁNDEZ", "DÍAZ", "TORRES",
+            "RAMÍREZ", "MORENO", "ROJAS", "GUTIÉRREZ", "CASTRO", "ORTIZ", "VARGAS"
     };
+
 
     private static final Random random = new Random();
 

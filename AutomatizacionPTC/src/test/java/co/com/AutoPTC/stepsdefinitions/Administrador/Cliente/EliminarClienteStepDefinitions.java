@@ -4,6 +4,7 @@ import co.com.AutoPTC.question.Administrador.Cliente.ValidacionEliminacionClient
 import co.com.AutoPTC.tasks.Administrador.Cliente.EliminarCliente;
 import co.com.AutoPTC.tasks.Administrador.Cliente.ValidarEdicionCliente;
 import co.com.AutoPTC.tasks.Administrador.Cliente.ValidarEliminacionCliente;
+import co.com.AutoPTC.tasks.Principal.ValidarYConfirmarAlerta;
 import cucumber.api.PendingException;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
@@ -18,7 +19,8 @@ public class EliminarClienteStepDefinitions {
     @Cuando("^presione el botón \"([^\"]*)\" correspondiente a un cliente activo$")
     public void presioneElBotónCorrespondienteAUnClienteActivo(String boton) {
         theActorInTheSpotlight().attemptsTo(
-                EliminarCliente.ahora()
+                EliminarCliente.ahora(),
+                ValidarYConfirmarAlerta.conMensaje("Desactivado!")
         );
     }
 

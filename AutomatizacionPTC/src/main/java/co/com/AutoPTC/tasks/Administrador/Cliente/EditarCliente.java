@@ -39,10 +39,11 @@ public class EditarCliente implements Task {
                 Enter.theValue(datos.getApellidos()).into(INPUT_APELLIDOS),
                 Clear.field(INPUT_CORREO_ELECTRONICO),
                 Enter.theValue(datos.getCorreoElectronico()).into(INPUT_CORREO_ELECTRONICO),
-
                 Click.on(BOTON_GUARDAR_CAMBIOS)
         );
 
         actor.remember("numeroDocumentoCliente", datos.getNumeroDocumento());
+        actor.remember("nombreCliente", datos.getNombres() + " " + datos.getApellidos());
+        actor.remember("correoCliente", datos.getCorreoElectronico());
     }
 }

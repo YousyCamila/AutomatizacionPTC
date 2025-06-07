@@ -18,9 +18,10 @@ public class ValidarEliminacionCliente implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        String numeroDocumento = TD_NUMERO_DOCUMENTO.resolveFor(actor).getText();
+        //String numeroDocumento = TD_NUMERO_DOCUMENTO.resolveFor(actor).getText();
+        //actor.remember("numeroDocumentoCliente", numeroDocumento);
 
-        actor.remember("numeroDocumentoCliente", numeroDocumento);
+        String numeroDocumento = actor.recall("numeroDocumentoCliente");
 
         actor.attemptsTo(
                 Click.on(BUSCAR_CLIENTE_ELI),

@@ -21,7 +21,7 @@ public class ValidarEdicionCliente implements Task {
         String numeroDocumento = actor.recall("numeroDocumentoCliente");
 
         actor.attemptsTo(
-                Click.on(BTN_ACEPTAR),
+                //Click.on(BTN_ACEPTAR),
 
                 Clear.field(BUSCAR_CLIENTE),
                 Enter.theValue(numeroDocumento).into(BUSCAR_CLIENTE),

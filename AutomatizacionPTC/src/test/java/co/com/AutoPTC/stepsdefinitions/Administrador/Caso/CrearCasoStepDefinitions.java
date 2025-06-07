@@ -6,6 +6,7 @@ import co.com.AutoPTC.question.Administrador.Cliente.ValidacionEdicionCliente;
 import co.com.AutoPTC.tasks.Administrador.Caso.CrearCaso;
 import co.com.AutoPTC.tasks.Administrador.Caso.ValidarCrearCaso;
 import co.com.AutoPTC.tasks.Administrador.Cliente.ValidarEdicionCliente;
+import co.com.AutoPTC.tasks.Principal.ValidarYConfirmarAlerta;
 import co.com.AutoPTC.utils.hooks.GeneradorDatosCrearCaso;
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;
@@ -30,6 +31,7 @@ public class CrearCasoStepDefinitions {
         OnStage.theActorInTheSpotlight().attemptsTo(
                 CrearCaso.con(datosAleatorios)
         );
+
     }
 
     @Entonces("^se debe verificar que los datos del caso hayan sido registrados correctamente y se reflejen en la lista de casos$")
