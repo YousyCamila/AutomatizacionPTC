@@ -14,14 +14,16 @@ public class ValidacionEliminacionDetective implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         try {
-            String estado = Text.of(ValidarEliminarDetective.CAMPO_ESTADO_DETECTIVE)
-                    .viewedBy(actor)
-                    .asString()
-                    .trim();
+            String nombre = Text.of(ValidarEliminarDetective.CAMPO_NOMBRE_DETECTIVE).viewedBy(actor).asString().trim();
+            String cedula = Text.of(ValidarEliminarDetective.TD_NUMERO1_DOCUMENTO).viewedBy(actor).asString().trim();
+            String estado = Text.of(ValidarEliminarDetective.CAMPO_ESTADO_DETECTIVE).viewedBy(actor).asString().trim();
 
-            return estado.equalsIgnoreCase("Inactivo");
+            return nombre.equalsIgnoreCase("CAMILA GUERRA") &&
+                    cedula.equalsIgnoreCase("1234568545") &&
+                    estado.equalsIgnoreCase("Inactivo");
+
         } catch (Exception e) {
-            System.out.println("Error al validar la eliminación del detective: " + e.getMessage());
+            System.out.println("Error al validar la DESACTIVACION del detective: " + e.getMessage());
             return false;
         }
     }
