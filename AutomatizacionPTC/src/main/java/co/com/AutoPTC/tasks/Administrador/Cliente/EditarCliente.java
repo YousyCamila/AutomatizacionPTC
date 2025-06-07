@@ -44,5 +44,7 @@ public class EditarCliente implements Task {
         );
 
         actor.remember("numeroDocumentoCliente", datos.getNumeroDocumento());
+        actor.remember("nombreCliente", datos.getNombres() + " " + datos.getApellidos());
+        actor.remember("correoCliente", datos.getCorreoElectronico());
     }
 }
