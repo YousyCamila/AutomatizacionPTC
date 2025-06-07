@@ -21,7 +21,8 @@ public class EliminarCliente implements Task {
         actor.attemptsTo(
                 Click.on(ABRIR_OPCIONES),
                 Click.on(ABRIR_GESTIONCLIENTES),
-                Click.on(BTN_ELIMINAR),
+                Click.on(botonEliminarClienteActivo()),
+                //Click.on(BTN_ELIMINAR),
                 Click.on(BTN_ACEPTAR_ELIMINAR),
                 Click.on(BTN_ACEPTAR)
         );
