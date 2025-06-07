@@ -18,6 +18,7 @@ public class EliminarCliente implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+
         actor.attemptsTo(
                 Click.on(ABRIR_OPCIONES),
                 Click.on(ABRIR_GESTIONCLIENTES),
@@ -26,6 +27,9 @@ public class EliminarCliente implements Task {
                 Click.on(BTN_ACEPTAR_ELIMINAR),
                 Click.on(BTN_ACEPTAR)
         );
+
+        String numeroDocumento = numeroDocumentoClienteActivo().resolveFor(actor).getText();
+        actor.remember("numeroDocumentoCliente", numeroDocumento);
     }
 }
 

@@ -18,6 +18,10 @@ public class EliminacionCliente {
         return Target.the("Botón eliminar del primer cliente con estado Activo")
                 .located(By.xpath("//table/tbody/tr[td/div/span[text()='Activo']][1]/td[5]//button[3]"));
     }
+    public static Target numeroDocumentoClienteActivo() {
+        return Target.the("Número de documento del primer cliente activo")
+                .located(By.xpath("//table/tbody/tr[td/div/span[text()='Activo']][1]/td[1]"));
+    }
 
 
 }
