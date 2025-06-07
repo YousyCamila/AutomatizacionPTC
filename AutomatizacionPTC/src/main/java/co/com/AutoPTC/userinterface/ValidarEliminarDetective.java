@@ -13,7 +13,10 @@ public class ValidarEliminarDetective {
 
     public static final Target CAMPO_ESTADO_DETECTIVE = Target.the("Campo que muestra el estado del detective")
             .located(By.xpath("/html/body/div/div/div[2]/div[2]/table/tbody/tr/td[4]/div/span"));
-
+    public static final Target CAMPO_NOMBRE_DETECTIVE = Target.the("Campo que muestra el NOMBRE del detective")
+            .located(By.xpath("/html/body/div/div/div[2]/div[2]/table/tbody/tr/td[2]/div/span"));
+    public static final Target TD_NUMERO1_DOCUMENTO = Target.the("Número de documento del detective en la tabla")
+            .located(By.xpath("/html/body/div/div/div[2]/div[2]/table/tbody/tr/td[1]"));
     public static final Target TD_NUMERO_DOCUMENTO = Target.the("Número de documento del detective en la tabla")
             .located(By.xpath("/html/body/div/div/div[2]/div[2]/table/tbody/tr/td[1]"));
 }

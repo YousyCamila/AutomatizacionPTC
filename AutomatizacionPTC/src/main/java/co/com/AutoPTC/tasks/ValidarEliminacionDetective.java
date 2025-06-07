@@ -8,6 +8,8 @@ import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
+import static co.com.AutoPTC.tasks.Esperar.unosSegundos;
+
 public class ValidarEliminacionDetective implements Task {
 
     public static ValidarEliminacionDetective eliminarDetectivePorNumeroDinamico() {
@@ -24,7 +26,8 @@ public class ValidarEliminacionDetective implements Task {
         actor.attemptsTo(
                 Clear.field(ValidarEliminarDetective.CAMPO_BUSQUEDA_DOCUMENTO),
                 Enter.theValue(numeroDocumento).into(ValidarEliminarDetective.CAMPO_BUSQUEDA_DOCUMENTO),
-                Click.on(ValidarEliminarDetective.BOTON_BUSCAR_DETECTIVE)
+                Click.on(ValidarEliminarDetective.BOTON_BUSCAR_DETECTIVE),
+                unosSegundos(01)
         );
     }
 }

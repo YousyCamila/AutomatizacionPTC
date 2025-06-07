@@ -38,6 +38,10 @@ public class InicioFomulario extends PageObject {
     public static Target BOTON_ORDENAR = Target.the("boton ordenar").located(By.xpath("/html/body/div/div/div/div/table/thead/tr/th[6]/button"));
     public static Target BOTON_ORDENAR_ULTIMO = Target.the("boton ordenar").located(By.xpath("/html/body/div/div/div/div/table/thead/tr/th[6]/button"));
 
+
+    public static final Target FILAS_TABLA = Target.the("filas de la tabla")
+            .located(By.cssSelector("table tbody tr"));
+
 }
 
 

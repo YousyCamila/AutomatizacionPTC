@@ -1,11 +1,10 @@
 package co.com.AutoPTC.question;
 
-import co.com.AutoPTC.utils.hooks.GeneradorDatosCrearContrato;
+import co.com.AutoPTC.userinterface.CrearContratoPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.targets.Target;
 
-public class  ValidacionCrearContrato implements Question<Boolean> {
+public class ValidacionCrearContrato implements Question<Boolean> {
 
     public static ValidacionCrearContrato validacionCrearContrato() {
         return new ValidacionCrearContrato();
@@ -14,12 +13,9 @@ public class  ValidacionCrearContrato implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         try {
-            String descripcionEsperada = GeneradorDatosCrearContrato.ultimaDescripcionGenerada;
-
-            Target descripcionEnTabla = Target.the("descripcion recién creada")
-                    .locatedBy("//*[contains(text(),'" + descripcionEsperada + "')]");
-
-            return descripcionEnTabla.resolveFor(actor).isVisible();
+            return CrearContratoPage.DESCRIPCION_EN_TABLA.resolveFor(actor).isVisible()
+                    && CrearContratoPage.CLIENTE_EN_TABLA.resolveFor(actor).isVisible()
+                    && CrearContratoPage.DETECTIVE_EN_TABLA.resolveFor(actor).isVisible();
         } catch (Exception e) {
             return false;
         }

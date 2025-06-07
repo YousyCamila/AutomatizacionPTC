@@ -6,12 +6,14 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.AutoPTC.tasks.Esperar.unosSegundos;
 import static co.com.AutoPTC.userinterface.CrearContratoPage.SELECT_DETECTIVE;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class CrearContrato implements Task {
@@ -37,12 +39,14 @@ public class CrearContrato implements Task {
                 Click.on(CrearContratoPage.SELECT_CLIENTE),
                 WaitUntil.the(CrearContratoPage.OPCION_CLIENTE(datos.getCliente()), isVisible()).forNoMoreThan(5).seconds(),
                 Click.on(CrearContratoPage.OPCION_CLIENTE(datos.getCliente())),
+                unosSegundos(01),
 
-                WaitUntil.the(SELECT_DETECTIVE, isVisible()).forNoMoreThan(5).seconds(),
+
                 Click.on(SELECT_DETECTIVE),
+                Click.on(CrearContratoPage.INPUT_LUIS),
 
-                WaitUntil.the(CrearContratoPage.OPCION_DETECTIVE(datos.getDetective()), isVisible()).forNoMoreThan(5).seconds(),
-                Click.on(CrearContratoPage.OPCION_DETECTIVE(datos.getDetective())),
+                unosSegundos(01),
+
 
                 Enter.theValue(datos.getDescripcionServicio()).into(CrearContratoPage.TEXTAREA_DESCRIPCION),
                 Enter.theValue(datos.getFechaInicio()).into(CrearContratoPage.INPUT_FECHA_INICIO),
