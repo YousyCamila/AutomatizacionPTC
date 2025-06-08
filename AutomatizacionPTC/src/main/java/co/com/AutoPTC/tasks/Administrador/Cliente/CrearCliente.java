@@ -1,6 +1,7 @@
 package co.com.AutoPTC.tasks.Administrador.Cliente;
 
 import co.com.AutoPTC.models.DatosCrearCliente;
+import co.com.AutoPTC.tasks.Principal.ValidarYConfirmarAlerta;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -46,7 +47,9 @@ public class CrearCliente implements Task {
                 Click.on(INPUT_FECHA_NACIMIENTO),
                 Enter.theValue(datos.getFechaNacimiento()).into(INPUT_FECHA_NACIMIENTO),
 
-                Click.on(BTN_GUARDAR_CLIENTE)
+                Click.on(BTN_GUARDAR_CLIENTE),
+
+                ValidarYConfirmarAlerta.conMensaje("Creado!")
         );
     }
 }
