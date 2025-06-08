@@ -18,13 +18,9 @@ public class EliminarDetective implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(EliminacionDetective.ABRIR_OPCIONES),
-                unosSegundos(01),
-                Click.on(EliminacionDetective.ABRIR_GESTIONDETECTIVES),
-                unosSegundos(01),
+                Navegacion.hacia("Gestionar Detectives"),
                 Click.on(EliminacionDetective.ABRIR_BOTON_EDITAR),
                 unosSegundos(01),
-
                 Click.on(EliminacionDetective.ACTIVAR_DETECTIVE),
                 unosSegundos(01),
                 Click.on(EliminacionDetective.GUARDAR_CON_DETECTIVE_ACTIVO),
@@ -40,5 +36,4 @@ public class EliminarDetective implements Task {
 
         );
     }
-
 }

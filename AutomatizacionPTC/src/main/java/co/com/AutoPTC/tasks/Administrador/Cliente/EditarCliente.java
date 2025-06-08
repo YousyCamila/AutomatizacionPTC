@@ -1,6 +1,7 @@
 package co.com.AutoPTC.tasks.Administrador.Cliente;
 
 import co.com.AutoPTC.models.Administrador.Cliente.DatosEditarCliente;
+import co.com.AutoPTC.tasks.Navegacion;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Clear;
@@ -25,8 +26,7 @@ public class EditarCliente implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(ABRIR_OPCIONES),
-                Click.on(ABRIR_GESTIONCLIENTES),
+                Navegacion.hacia("Gestionar Clientes"),
                 Click.on(BTN_EDITAR_CLIENTE),
                 Click.on(SELECT_TIPO_DOCUMENTO),
                 Click.on(opcionTipoDocumento(datos.getTipoDocumento())),

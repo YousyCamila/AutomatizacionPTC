@@ -2,7 +2,7 @@ package co.com.AutoPTC.tasks.Administrador.Caso;
 
 import co.com.AutoPTC.models.Administrador.Caso.ModelCrearCaso;
 import co.com.AutoPTC.models.Administrador.Cliente.DatosEditarCliente;
-import co.com.AutoPTC.tasks.Principal.ValidarYConfirmarAlerta;
+import co.com.AutoPTC.tasks.Navegacion;
 import co.com.AutoPTC.userinterface.Administrador.Caso.CreacionCaso;
 import co.com.AutoPTC.userinterface.Administrador.Caso.ValidacionCreacionCaso;
 import jdk.internal.org.jline.utils.ShutdownHooks;
@@ -13,6 +13,7 @@ import net.serenitybdd.screenplay.actions.ClickOnBy;
 import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
+import static co.com.AutoPTC.userinterface.Administrador.Detective.CreacionDetective.ABRIR_CREACION_DETECTIVES;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -31,8 +32,8 @@ public static CrearCaso con(ModelCrearCaso datos){
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(CreacionCaso.BTON_OPCIONES),
-                Click.on(CreacionCaso.BTON_OPCION),
+                Navegacion.hacia("Gestionar Casos"),
+                Click.on(ABRIR_CREACION_DETECTIVES),
                 Click.on(CreacionCaso.BTON_CREAR_CASO),
                 Click.on(CreacionCaso.SELECT_CASO),
                 Click.on(CreacionCaso.opcionTipoCaso(datos.getNombreCaso())),
@@ -41,16 +42,18 @@ public static CrearCaso con(ModelCrearCaso datos){
                 Click.on(CreacionCaso.SELECT_DETECTIVE),
                 Click.on(CreacionCaso.opcionDetectivePorNombre(datos.getNombreDetective())),
                 Click.on(CreacionCaso.BTN_GUARDAR),
-                ValidarYConfirmarAlerta.conMensaje("Creado!")
-                //Click.on(ValidacionCreacionCaso.BTN_ACEPTAR)
+                Click.on(ValidacionCreacionCaso.BTN_ACEPTAR)
         );
 
+        // Espera explícita para el ID que aparece solo luego de guardar
         actor.attemptsTo(
                 WaitUntil.the(CreacionCaso.LBL_ID_CASO, isVisible()).forNoMoreThan(15).seconds()
         );
 
+        // Captura el ID ya visible y con texto
         String idCaso = Text.of(CreacionCaso.LBL_ID_CASO).viewedBy(actor).asString().trim();
 
+        // Verificación simple para evitar ID vacío
         if(idCaso.isEmpty()){
             throw new AssertionError("No se pudo capturar el ID del caso creado.");
         }

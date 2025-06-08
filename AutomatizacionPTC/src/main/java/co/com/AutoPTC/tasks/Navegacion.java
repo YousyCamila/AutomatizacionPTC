@@ -32,8 +32,6 @@ public class Navegacion implements Task {
                 Click.on(MenuLateral.BOTON_MENU_LATERAL(opcion))
         );
     }
-
-
     public static class MenuLateral {
         public static final Target ABRIR_OPCIONES_ADMIN = Target.the("Abrir menú de opciones")
                 .located(By.xpath("//*[@id=\"root\"]/div/div[1]/div/button"));
