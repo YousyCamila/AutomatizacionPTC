@@ -2,7 +2,7 @@ package co.com.AutoPTC.stepsdefinitions;
 
 import co.com.AutoPTC.models.DatosCrearCliente;
 import co.com.AutoPTC.question.ValidacionCreacionCliente;
-import co.com.AutoPTC.question.ValidacionRegistro;
+
 import co.com.AutoPTC.tasks.CrearCliente;
 import co.com.AutoPTC.utils.hooks.GeneradorDatosDinamicosCliente;
 import cucumber.api.DataTable;
