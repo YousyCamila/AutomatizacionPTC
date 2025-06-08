@@ -24,21 +24,22 @@ public class CrearCliente {
     }
 
     public static final Target INPUT_NUMERO_DOCUMENTO = Target.the("Campo para el número de documento")
-            .located(By.xpath("//*[@id=\":r7k:\"]"));
+            .located(By.xpath("//input[contains(@class,'MuiOutlinedInput-input')]"));
 
 
 
     public static final Target INPUT_NOMBRES = Target.the("Campo para los nombres del cliente")
-            .located(By.xpath("//*[@id=\":r7l:\"]"));
+            .located(By.xpath("(//input[contains(@class, 'MuiOutlinedInput-input')])[2]"));
 
     public static final Target INPUT_APELLIDOS = Target.the("Campo para los apellidos del cliente")
-            .located(By.xpath("//*[@id=\":r7m:\"]"));
+            .located(By.xpath("(//input[contains(@class,'MuiOutlinedInput-input')])[3]")
+            );
 
     public static final Target INPUT_CORREO_ELECTRONICO = Target.the("Campo para el correo electrónico")
-            .located(By.xpath("//*[@id=\":r7n:\"]"));
+            .located(By.xpath("(//input[contains(@class,'MuiOutlinedInput-input')])[4]"));
 
     public static final Target INPUT_FECHA_NACIMIENTO = Target.the("Campo para la fecha de nacimiento")
-            .located(By.xpath("//*[@id=\":r7o:\"]"));
+            .located(By.xpath("(//input[contains(@class,'MuiOutlinedInput-input')])[5]"));
 
     public static final Target BTN_GUARDAR_CLIENTE = Target.the("Botón para guardar el nuevo cliente")
             .located(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/form/div[2]/button[2]"));
