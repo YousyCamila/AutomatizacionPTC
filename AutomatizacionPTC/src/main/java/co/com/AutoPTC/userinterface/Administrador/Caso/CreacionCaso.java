@@ -8,7 +8,7 @@ public class CreacionCaso {
     public static Target BTON_OPCIONES = Target.the("Botón para editar cliente")
             .located(By.xpath("//*[@id=\"root\"]/div/div[1]/div/button"));
 
-    public static Target BTON_OPCION = Target.the("Botón para editar cliente")
+    public static Target BTON_OPCION = Target.the("Botón para crear caso ")
             .located(By.xpath("/html/body/div[2]/div[3]/ul/li[3]/div"));
 
     public static Target BTON_CREAR_CASO = Target.the("Boton para crear el caso")

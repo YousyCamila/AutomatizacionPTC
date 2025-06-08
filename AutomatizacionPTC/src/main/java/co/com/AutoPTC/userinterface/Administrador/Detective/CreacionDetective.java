@@ -9,7 +9,7 @@ public class CreacionDetective {
             .located(By.xpath("//*[@id=\"root\"]/div/div[1]/div/button"));
     public static final Target ABRIR_GESTION_DETECTIVES = Target.the("Abrir gestion de detective")
             .located(By.xpath("/html/body/div[2]/div[3]/ul/li[2]/div/div[2]/span"));
-    public static final Target ABRIR_CREACION_CLIENTES = Target.the("Selector para opcion para crear detective")
+    public static final Target ABRIR_CREACION_DETECTIVES = Target.the("Selector para opcion para crear detective")
             .located(By.xpath("//*[@id=\"root\"]/div/div[2]/div[1]/div[1]/button[1]"));
     public static final Target ABRIR_DROPDOWN_TIPO_DOCUMENTO = Target.the("Dropdown para tipo de documento")
             .located(By.xpath("//label[contains(text(), 'Tipo de Documento')]/following-sibling::div"));
