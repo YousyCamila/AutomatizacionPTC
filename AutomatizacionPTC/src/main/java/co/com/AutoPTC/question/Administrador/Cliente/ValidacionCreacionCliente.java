@@ -1,4 +1,4 @@
-package co.com.AutoPTC.question;
+package co.com.AutoPTC.question.Administrador.Cliente;
 
 import co.com.AutoPTC.userinterface.ValidarCrearCliente;
 import net.serenitybdd.screenplay.Actor;

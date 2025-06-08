@@ -1,4 +1,4 @@
-package co.com.AutoPTC.tasks;
+package co.com.AutoPTC.tasks.Administrador.Cliente;
 
 import co.com.AutoPTC.models.DatosCrearCliente;
 import net.serenitybdd.core.steps.Instrumented;
@@ -7,7 +7,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
-import static co.com.AutoPTC.userinterface.CrearCliente.*;
+import static co.com.AutoPTC.userinterface.Administrador.Cliente.CrearCliente.*;
 
 public class CrearCliente implements Task {
 

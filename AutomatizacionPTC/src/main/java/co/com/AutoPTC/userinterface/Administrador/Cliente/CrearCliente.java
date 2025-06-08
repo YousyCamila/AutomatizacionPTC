@@ -1,4 +1,4 @@
-package co.com.AutoPTC.userinterface;
+package co.com.AutoPTC.userinterface.Administrador.Cliente;
 
 import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;
