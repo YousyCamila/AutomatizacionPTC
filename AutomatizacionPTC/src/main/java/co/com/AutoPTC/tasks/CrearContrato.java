@@ -31,8 +31,7 @@ public class CrearContrato implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(CrearContratoPage.BOTON_OPCIONES),
-                Click.on(CrearContratoPage.BOTON_CONTRATOS),
+                Navegacion.hacia("Gestionar Contratos"),
                 Click.on(CrearContratoPage.BOTON_CREAR),
                 unosSegundos(1),
 
