@@ -1,5 +1,6 @@
 package co.com.AutoPTC.userinterface;
 
+import co.com.AutoPTC.utils.hooks.GeneradorDatosCrearContrato;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
@@ -30,10 +31,7 @@ public class CrearContratoPage {
         return Target.the("opción del cliente: " + cliente)
                 .located(By.xpath("//ul[@role='listbox']//li[normalize-space(.)='" + cliente + "']"));
     }
-    public static Target OPCION_DETECTIVE(String detective) {
-        return Target.the("opción del detective: " + detective)
-                .located(By.xpath("//ul[@role='listbox']//li[normalize-space(.)='" + detective + "']"));
-    }
+
     public static Target OPCION_METODO_PAGO(String metodo) {
         return Target.the("opción del método de pago: " + metodo)
                 .located(By.xpath("//ul[@role='listbox']//li[normalize-space(.)='" + metodo + "']"));
@@ -46,4 +44,20 @@ public class CrearContratoPage {
             .located(By.xpath("/html/body/div[2]/div/div[6]/button[1]"));
     public static final Target ULTIMO_CONTRATO = Target.the("último contrato de la tabla")
             .locatedBy("(//table//tbody//tr)[last()]");
+
+
+
+    public static final Target CLIENTE_EN_TABLA = Target.the("cliente recién asignado")
+            .locatedBy("//table//tbody//tr[last()]//td[contains(text(),'" + GeneradorDatosCrearContrato.ultimoClienteGenerado + "')]");
+
+    public static final Target DETECTIVE_EN_TABLA = Target.the("detective recién asignado")
+            .locatedBy("//table//tbody//tr[last()]//td[contains(text(),'" + GeneradorDatosCrearContrato.ultimoDetectiveGenerado + "')]");
+
+    public static final Target DESCRIPCION_EN_TABLA = Target.the("descripción recién creada")
+            .locatedBy("//table//tbody//tr[last()]//td[contains(text(),'" + GeneradorDatosCrearContrato.ultimaDescripcionGenerada + "')]");
+
+
+    public static final Target INPUT_LUIS = Target.the("detective a seleccionar")
+            .locatedBy("/html/body/div[2]/div[3]/ul/li[6]");
+
 }
