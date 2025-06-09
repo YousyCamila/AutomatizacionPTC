@@ -51,5 +51,9 @@ public class CrearCliente implements Task {
 
                 ValidarYConfirmarAlerta.conMensaje("Creado!")
         );
+
+        actor.remember("numeroDocumentoCliente", datos.getNumeroDocumento());
+        actor.remember("nombreCliente", datos.getNombres() + " " + datos.getApellidos());
+        actor.remember("correoCliente", datos.getCorreoElectronico());
     }
 }
