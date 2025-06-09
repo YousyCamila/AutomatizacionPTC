@@ -5,6 +5,7 @@ import co.com.AutoPTC.question.Administrador.Cliente.ValidacionEdicionCliente;
 import co.com.AutoPTC.tasks.Administrador.Cliente.EditarCliente;
 import co.com.AutoPTC.tasks.Administrador.Cliente.ValidarEdicionCliente;
 import co.com.AutoPTC.tasks.Principal.ValidarYConfirmarAlerta;
+import co.com.AutoPTC.tasks.ValidarDatosEnMongo;
 import co.com.AutoPTC.utils.hooks.GeneradorDatosDinamicos;
 import cucumber.api.DataTable;
 import cucumber.api.java.es.Cuando;
@@ -12,6 +13,7 @@ import cucumber.api.java.es.Entonces;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -56,10 +58,22 @@ public class EditarClienteStepDefinitons {
                 seeThat(ValidacionEdicionCliente.seMuestraElClienteEditado())
                         .orComplainWith(AssertionError.class, "El cliente editado no se muestra correctamente en la lista")
         );
+
+        String documento = theActorInTheSpotlight().recall("numeroDocumentoCliente");
+        String nombres = theActorInTheSpotlight().recall("nombreSoloCliente");
+        String correo = theActorInTheSpotlight().recall("correoCliente");
+
+        Map<String, String> camposEsperados = new HashMap<String, String>();
+        camposEsperados.put("nombres", nombres);
+        camposEsperados.put("correo", correo);
+
+        theActorInTheSpotlight().attemptsTo(
+                ValidarDatosEnMongo.enColeccion("clientes", "numeroDocumento", documento, camposEsperados)
+        );
     }
 
 
-}
+    }
 
 
 
