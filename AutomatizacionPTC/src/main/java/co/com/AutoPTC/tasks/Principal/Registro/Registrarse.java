@@ -45,5 +45,7 @@ public class Registrarse implements Task {
                 //Enter.theValue(datosRegistro.getFechaNacimiento()).into(INPUT_FECHA_NACIMIENTO),
                 //Click.on(BOTON_GUARDAR)
         );
+
+        actor.remember("emailRegistrado", datosRegistro.getEmail());
     }
 }
