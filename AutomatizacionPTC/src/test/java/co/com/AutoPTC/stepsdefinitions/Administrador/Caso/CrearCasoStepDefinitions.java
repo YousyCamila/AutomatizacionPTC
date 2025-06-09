@@ -7,12 +7,16 @@ import co.com.AutoPTC.tasks.Administrador.Caso.CrearCaso;
 import co.com.AutoPTC.tasks.Administrador.Caso.ValidarCrearCaso;
 import co.com.AutoPTC.tasks.Administrador.Cliente.ValidarEdicionCliente;
 import co.com.AutoPTC.tasks.Principal.ValidarYConfirmarAlerta;
+import co.com.AutoPTC.tasks.ValidarDatosEnMongo;
 import co.com.AutoPTC.utils.hooks.GeneradorDatosCrearCaso;
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 import net.serenitybdd.screenplay.actors.OnStage;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -44,6 +48,16 @@ public class CrearCasoStepDefinitions {
         theActorInTheSpotlight().should(
                 seeThat(ValidacionCrearCaso.seMuestraElCasoCreado())
                         .orComplainWith(AssertionError.class, "El caso muestra correctamente en la lista")
+        );
+
+        String idcaso = theActorInTheSpotlight().recall("idCasoNuevo");
+        String nombreCaso = theActorInTheSpotlight().recall("casoNuevo");
+
+        Map<String, String> camposEsperados = new HashMap<String, String>();
+        camposEsperados.put("nombreCaso", nombreCaso);
+
+        theActorInTheSpotlight().attemptsTo(
+                ValidarDatosEnMongo.enColeccion("casos", "_id", idcaso, camposEsperados)
         );
     }
 

@@ -6,18 +6,18 @@ import net.serenitybdd.screenplay.Question;
 
 public class ValidacionCrearContrato implements Question<Boolean> {
 
-    public static ValidacionCrearContrato validacionCrearContrato() {
-        return new ValidacionCrearContrato();
+  public static ValidacionCrearContrato validacionCrearContrato() {
+       return new ValidacionCrearContrato();
     }
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        try {
+       try {
             return CrearContratoPage.DESCRIPCION_EN_TABLA.resolveFor(actor).isVisible()
                     && CrearContratoPage.CLIENTE_EN_TABLA.resolveFor(actor).isVisible()
-                    && CrearContratoPage.DETECTIVE_EN_TABLA.resolveFor(actor).isVisible();
+                   && CrearContratoPage.DETECTIVE_EN_TABLA.resolveFor(actor).isVisible();
         } catch (Exception e) {
-            return false;
+           return false;
         }
     }
 }

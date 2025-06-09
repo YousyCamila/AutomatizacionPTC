@@ -53,6 +53,7 @@ public class CrearCliente implements Task {
         );
 
         actor.remember("numeroDocumentoCliente", datos.getNumeroDocumento());
+        actor.remember("nombreSoloCliente", datos.getNombres());
         actor.remember("nombreCliente", datos.getNombres() + " " + datos.getApellidos());
         actor.remember("correoCliente", datos.getCorreoElectronico());
     }

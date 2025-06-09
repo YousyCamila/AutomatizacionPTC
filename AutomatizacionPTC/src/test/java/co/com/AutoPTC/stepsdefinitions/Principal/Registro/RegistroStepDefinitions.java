@@ -1,6 +1,7 @@
 package co.com.AutoPTC.stepsdefinitions.Principal.Registro;
 
 import co.com.AutoPTC.models.Principal.Registro.DatosRegistro;
+import co.com.AutoPTC.question.Principal.Registro.ValidacionEmailEnMongo;
 import co.com.AutoPTC.question.Principal.Registro.ValidacionRegistro;
 import co.com.AutoPTC.tasks.AbrirPagina;
 import co.com.AutoPTC.tasks.Principal.Registro.Registrarse;
@@ -58,7 +59,11 @@ public class RegistroStepDefinitions {
 
     @Entonces("^se debe verificar que el usuario haya sido registrado correctamente y redirigido a la página de inicio de sesión$")
     public void seDebeVerificarQueElUsuarioHayaSidoRegistradoCorrectamenteYRedirigidoALaPáginaDeInicioDeSesión() {
-        theActorInTheSpotlight().should(seeThat(ValidacionRegistro.validacionRegistro()));
+        //theActorInTheSpotlight().should(seeThat(ValidacionRegistro.validacionRegistro()));
+
+        theActorInTheSpotlight().should(
+                seeThat(ValidacionEmailEnMongo.existeEnBaseDeDatos()) // Validación en base de datos
+        );
 
     }
 

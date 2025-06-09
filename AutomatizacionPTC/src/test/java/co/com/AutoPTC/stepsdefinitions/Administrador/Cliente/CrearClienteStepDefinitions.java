@@ -6,9 +6,13 @@ import co.com.AutoPTC.question.Administrador.Cliente.ValidacionCreacionCliente;
 import co.com.AutoPTC.tasks.Administrador.Cliente.CrearCliente;
 import co.com.AutoPTC.tasks.Administrador.Cliente.ValidarCreacionCliente;
 import co.com.AutoPTC.tasks.Administrador.Cliente.ValidarEdicionCliente;
+import co.com.AutoPTC.tasks.ValidarDatosEnMongo;
 import co.com.AutoPTC.utils.hooks.GeneradorDatosDinamicosCliente;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -43,6 +47,18 @@ public class CrearClienteStepDefinitions {
 
         theActorInTheSpotlight().should(
                 seeThat(ValidacionCreacionCliente.validacionCreacionCliente())
+        );
+
+        String documento = theActorInTheSpotlight().recall("numeroDocumentoCliente");
+        String nombres = theActorInTheSpotlight().recall("nombreSoloCliente");
+        String correo = theActorInTheSpotlight().recall("correoCliente");
+
+        Map<String, String> camposEsperados = new HashMap<String, String>();
+        camposEsperados.put("nombres", nombres);
+        camposEsperados.put("correo", correo);
+
+        theActorInTheSpotlight().attemptsTo(
+                ValidarDatosEnMongo.enColeccion("clientes", "numeroDocumento", documento, camposEsperados)
         );
     }
 }
