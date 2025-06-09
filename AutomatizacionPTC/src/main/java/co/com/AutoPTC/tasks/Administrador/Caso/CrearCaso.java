@@ -45,15 +45,14 @@ public static CrearCaso con(ModelCrearCaso datos){
                 Click.on(ValidacionCreacionCaso.BTN_ACEPTAR)
         );
 
-        // Espera explícita para el ID que aparece solo luego de guardar
+
         actor.attemptsTo(
                 WaitUntil.the(CreacionCaso.LBL_ID_CASO, isVisible()).forNoMoreThan(15).seconds()
         );
 
-        // Captura el ID ya visible y con texto
         String idCaso = Text.of(CreacionCaso.LBL_ID_CASO).viewedBy(actor).asString().trim();
 
-        // Verificación simple para evitar ID vacío
+
         if(idCaso.isEmpty()){
             throw new AssertionError("No se pudo capturar el ID del caso creado.");
         }

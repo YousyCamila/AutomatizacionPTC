@@ -42,7 +42,7 @@ public class CrearContrato implements Task {
 
 
                 Click.on(SELECT_DETECTIVE),
-                //Click.on(CrearContratoPage.INPUT_LUIS),
+                Click.on(CrearContratoPage.INPUT_LUIS),
 
                 unosSegundos(01),
 

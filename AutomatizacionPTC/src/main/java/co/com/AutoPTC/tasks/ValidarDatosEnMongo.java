@@ -7,6 +7,7 @@ import com.mongodb.client.MongoDatabase;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
 import java.util.Map;
 
@@ -39,7 +40,13 @@ public class ValidarDatosEnMongo implements Task {
             MongoDatabase db = mongoClient.getDatabase(BASE_DATOS);
             MongoCollection<Document> collection = db.getCollection(coleccion);
 
-            Document filtro = new Document(campoFiltro, valorFiltro);
+            Document filtro;
+            if ("_id".equals(campoFiltro)) {
+                filtro = new Document("_id", new ObjectId(valorFiltro));
+            } else {
+                filtro = new Document(campoFiltro, valorFiltro);
+            }
+
             Document resultado = collection.find(filtro).first();
 
             if (resultado != null) {
