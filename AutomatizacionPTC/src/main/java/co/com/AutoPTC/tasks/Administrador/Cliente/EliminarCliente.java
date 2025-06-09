@@ -1,5 +1,6 @@
 package co.com.AutoPTC.tasks.Administrador.Cliente;
 
+import co.com.AutoPTC.tasks.Navegacion;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -18,18 +19,12 @@ public class EliminarCliente implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-
         actor.attemptsTo(
-                Click.on(ABRIR_OPCIONES),
-                Click.on(ABRIR_GESTIONCLIENTES),
-                Click.on(botonEliminarClienteActivo()),
-                //Click.on(BTN_ELIMINAR),
-                Click.on(BTN_ACEPTAR_ELIMINAR)
-                //Click.on(BTN_ACEPTAR)
+                Navegacion.hacia("Gestionar Clientes"),
+                Click.on(BTN_ELIMINAR),
+                Click.on(BTN_ACEPTAR_ELIMINAR),
+                Click.on(BTN_ACEPTAR)
         );
-
-        String numeroDocumento = numeroDocumentoClienteActivo().resolveFor(actor).getText();
-        actor.remember("numeroDocumentoCliente", numeroDocumento);
     }
 }
 
