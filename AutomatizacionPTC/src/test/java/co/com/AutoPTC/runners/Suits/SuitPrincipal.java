@@ -19,8 +19,8 @@ import org.junit.runners.Suite;
         CrearClienteRunner.class,
         EdicionClienteRunner.class,
         EliminarClienteRunner.class,
-        CrearDetectiveRunner.class,
-        CrearCasoRunner.class,
+       CrearDetectiveRunner.class,
+       CrearCasoRunner.class,
         EliminarDetectiveRunner.class,
         CrearContratoRunner.class
 })
