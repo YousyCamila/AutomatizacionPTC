@@ -27,7 +27,7 @@ public class IniciarSesion implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-
+                Click.on(InicioSesionPage.ACEPTAR),
                 Click.on(InicioSesionPage.LOGIN_PAGE),
                 Enter.theValue(correo).into(InicioSesionPage.INPUT_USUARIO),
                 Enter.theValue(contraseña).into(InicioSesionPage.INPUT_CONTRASENA),

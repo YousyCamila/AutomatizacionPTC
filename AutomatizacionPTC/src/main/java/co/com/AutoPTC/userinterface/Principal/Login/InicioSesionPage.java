@@ -5,6 +5,10 @@ import org.openqa.selenium.By;
 
 public class InicioSesionPage {
 
+
+    public static final Target ACEPTAR = Target.the("enlace de login")
+            .located(By.id("continue"));
+
     public static final Target LOGIN_PAGE = Target.the("enlace de login")
             .located(By.xpath("//a[contains(@href, 'login')]"));
     public static final Target INPUT_USUARIO = Target.the("campo de usuario")
